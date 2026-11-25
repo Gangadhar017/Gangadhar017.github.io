@@ -89,7 +89,7 @@
   var navLinks = $$('.nav a');
   if ('IntersectionObserver' in window && navLinks.length) {
     var byId = {};
-    navLinks.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
+    navLinks.forEach(function (a) { var h = a.getAttribute('href'); if (h.charAt(0) === '#') byId[h.slice(1)] = a; });
     var so = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (!e.isIntersecting) return;
@@ -364,6 +364,8 @@
       ['Elsewhere', 'LeetCode, contest profile', 'Gangadhar_Singh', open('https://leetcode.com/u/Gangadhar_Singh/')],
       ['Elsewhere', 'Codeforces', 'gangadhar_017', open('https://codeforces.com/profile/gangadhar_017')],
       ['Elsewhere', 'Microsoft Learn', 'gangadharsingh-9927', open('https://learn.microsoft.com/en-us/users/gangadharsingh-9927/')],
+      ['Actions', 'Download résumé (PDF)', 'one page, A4', function () { var a = document.createElement('a'); a.href = 'Gangadhar_Singh_Resume.pdf'; a.download = ''; document.body.appendChild(a); a.click(); a.remove(); }],
+      ['Actions', 'Read the résumé online', 'opens /resume', function () { location.href = 'resume/'; }],
       ['Actions', 'Copy email address', 'clipboard', copyEmail],
       ['Actions', 'Write an email', 'mail app', function () { location.href = 'mailto:' + EMAIL; }],
       ['Actions', 'Switch light / dark theme', 'appearance', toggleTheme]

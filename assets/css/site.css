@@ -153,6 +153,8 @@ code { font: 0.9em var(--mono); }
 .tool kbd { font: inherit; color: inherit; opacity: 0.7; }
 .tool .m { display: none; }
 .tool svg { width: 14px; height: 14px; }
+.tool.cv { background: var(--accent); border-color: var(--accent); color: var(--on-accent); text-decoration: none; font-weight: 600; }
+.tool.cv:hover { background: var(--ink); border-color: var(--ink); color: var(--paper); }
 .tool .sun { display: none; }
 html[data-theme="dark"] .tool .sun { display: block; }
 html[data-theme="dark"] .tool .moon { display: none; }
@@ -232,7 +234,8 @@ html[data-theme="dark"] .tool .moon { display: none; }
 .sublede { margin-top: 18px; max-width: 46ch; color: var(--ink-2); font-size: clamp(15px, 1.15vw, 17.5px); }
 .sublede b { color: var(--ink); font-weight: 600; }
 
-.cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.cta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+.cta .btn { padding: 0 14px; }
 .btn {
   display: inline-flex; align-items: center; gap: 10px;
   height: 44px; padding: 0 18px;
