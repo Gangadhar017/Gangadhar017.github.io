@@ -80,7 +80,7 @@
 
       <div>
         <p class="lede">I ship systems, watch them run, and write down <span class="serif">exactly where they break.</span></p>
-        <p class="sublede">Cloud and DevOps by training: Docker, Kubernetes, Terraform and CI/CD across AWS, Azure, GCP and OCI. Now I apply the same habits to AI agents. <b>Eight of my projects are live</b>; the always-on ones were checked from your browser when this page opened.</p>
+        <p class="sublede">Cloud and DevOps by training: Docker, Kubernetes, Terraform and CI/CD across AWS, Azure, GCP and OCI. Now I apply the same habits to AI agents. <b>Nine of my projects are live</b>; the always-on ones were checked from your browser when this page opened.</p>
         <div class="cta">
           <a class="btn" href="#work">See the work <span class="arr down" aria-hidden="true">↓</span></a>
           <a class="btn ghost" href="Gangadhar_Singh_Resume.pdf" download>Résumé <span class="arr down" aria-hidden="true">↓</span></a>
@@ -92,7 +92,7 @@
       <aside class="board" aria-label="Live deployments">
         <div class="board-head">
           <span class="label"><i class="dot ok live"></i>Live deployments</span>
-          <span class="board-sum" id="fleet-sum">8 services</span>
+          <span class="board-sum" id="fleet-sum">9 services</span>
         </div>
         <ul class="board-list">
           <li><a href="#vigilops"><span class="n">VigilOps</span><span class="h">vercel + render</span></a><span class="st" data-st="vigilops"><i class="dot ok"></i><span class="tx">Live</span></span></li>
@@ -103,6 +103,7 @@
           <li><a href="#juris"><span class="n">Juris</span><span class="h">vercel</span></a><span class="st" data-st="juris"><i class="dot ok"></i><span class="tx">Live</span></span></li>
           <li><a href="#dealflow"><span class="n">DealFlow360</span><span class="h">render</span></a><span class="st" data-st="dealflow"><i class="dot"></i><span class="tx">Wakes on request</span></span></li>
           <li><a href="#tag"><span class="n">TAG Platform</span><span class="h">render</span></a><span class="st" data-st="tag"><i class="dot"></i><span class="tx">Wakes on request</span></span></li>
+          <li><a href="#transitops"><span class="n">TransitOps</span><span class="h">render</span></a><span class="st" data-st="transitops"><i class="dot"></i><span class="tx">Wakes on request</span></span></li>
         </ul>
         <a class="board-foot" href="#fleet">What each one runs on, and how to wake the sleeping ones ↓</a>
       </aside>
@@ -112,7 +113,7 @@
   <div class="ticker" aria-hidden="true">
     <div class="ticker-track">
       <ul>
-        <li><b>8</b> projects live right now</li>
+        <li><b>9</b> projects live right now</li>
         <li><b>554</b> LeetCode problems solved</li>
         <li>LeetCode contest rating <b>1726</b> · top 12.4%</li>
         <li>Microsoft Certified <b>DevOps Engineer Expert</b></li>
@@ -353,26 +354,31 @@
     <div class="cards">
 
       <article class="card rv" id="transitops">
-        <div class="card-top"><span class="label">04 / Odoo Hackathon · 2026</span><span class="st"><i class="dot"></i><span class="tx">Source</span></span></div>
-        <figure class="lab guard" aria-label="What TransitOps checks before a dispatch">
-          <div class="lab-head"><span class="label">Dispatch guard</span><span class="label">37 / 37 tests</span></div>
-          <ol class="guard-list">
-            <li><span class="q">Vehicle in the shop?</span><span class="a">Refused</span></li>
-            <li><span class="q">Driver's licence expired?</span><span class="a">Refused</span></li>
-            <li><span class="q">Cargo over the vehicle's capacity?</span><span class="a">Refused</span></li>
-            <li class="pass"><span class="q">All clear</span><span class="a">One transaction: trip dispatched, vehicle and driver marked on trip</span></li>
-          </ol>
+        <div class="card-top"><span class="label">04 / Odoo Hackathon · 2026</span><span class="st" data-st="transitops"><i class="dot"></i><span class="tx">Wakes on request</span></span></div>
+        <figure class="shot">
+          <div class="shot-bar">
+            <span class="sq" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="shot-url">transitops-1xru.onrender.com</span>
+            <div class="shot-tabs" role="tablist" aria-label="TransitOps screens">
+              <button type="button" role="tab" aria-selected="true" data-src="assets/img/transitops-dashboard.webp" data-alt="TransitOps dashboard: vehicles in the shop, active trips, drivers on duty, revenue this month, fleet status and critical alerts.">Dashboard</button>
+              <button type="button" role="tab" aria-selected="false" data-src="assets/img/transitops-trips.webp" data-alt="TransitOps trip ledger with registration numbers shown as yellow number plates and a status for each trip.">Trips</button>
+              <button type="button" role="tab" aria-selected="false" data-src="assets/img/transitops-reports.webp" data-alt="TransitOps reports: fuel efficiency, cost per kilometre, six months of revenue and a cost breakdown.">Reports</button>
+              <button type="button" role="tab" aria-selected="false" data-src="assets/img/transitops-signin.webp" data-alt="TransitOps sign-in page listing the rules it enforces, with one-click demo roles.">Sign in</button>
+            </div>
+          </div>
+          <img class="shot-img" loading="lazy" decoding="async" src="assets/img/transitops-dashboard.webp" width="1440" height="900" alt="TransitOps dashboard: vehicles in the shop, active trips, drivers on duty, revenue this month, fleet status and critical alerts.">
         </figure>
         <h3>TransitOps</h3>
         <p class="kicker">A fleet platform that refuses bad dispatches.</p>
-        <p class="desc">Dispatch, maintenance, drivers and cost analytics for a transport fleet, with four roles enforced on both the API and the interface.</p>
+        <p class="desc">Dispatch, maintenance, drivers and costs for a transport fleet. A vehicle in the workshop, a driver with an expired licence or cargo over capacity is refused inside the database transaction, and four roles are enforced on both the API and the interface.</p>
         <ul class="pts">
           <li><b>37 / 37</b><span>end-to-end tests passing: every business rule, validation and permission</span></li>
           <li><b>1</b><span>atomic transaction for each dispatch, completion or cancellation</span></li>
-          <li><b>0</b><span>chart libraries; the charts are hand-written SVG</span></li>
+          <li><b>0</b><span>databases to provision: the service starts its own PostgreSQL, so nothing expires</span></li>
         </ul>
-        <ul class="chips" aria-label="Built with"><li>React</li><li>Node.js</li><li>Express</li><li>PostgreSQL</li><li>Prisma</li><li>JWT</li></ul>
+        <ul class="chips" aria-label="Built with"><li>React</li><li>Node.js</li><li>Express</li><li>PostgreSQL</li><li>Prisma</li><li>JWT</li><li>GitHub Actions</li></ul>
         <div class="links">
+          <a class="btn sm" href="https://transitops-1xru.onrender.com/" target="_blank" rel="noopener">Open live <span class="arr" aria-hidden="true">↗</span></a>
           <a class="btn sm ghost" href="https://github.com/Gangadhar017/TransitOps" target="_blank" rel="noopener">Source <span class="arr" aria-hidden="true">↗</span></a>
         </div>
       </article>
@@ -500,11 +506,11 @@
           <div class="wide-text">
             <h3>Juris</h3>
             <p class="kicker">Legal research and drafting for Indian law.</p>
-            <p class="desc">An assistant for advocates and law students. Ask a legal question, upload a contract for clause-by-clause review, or draft a bail application or legal notice in court format. Domain guardrails keep every answer inside Indian law. Built as a team of three.</p>
+            <p class="desc">An assistant for advocates and law students. Ask a legal question, upload a contract for clause-by-clause review, or draft a bail application or legal notice in court format. Domain guardrails keep every answer inside Indian law. Built as a team of three; my part was the backend and the deployment.</p>
             <ul class="pts">
               <li><b>6</b><span>legal domains with guardrails: constitutional, criminal, civil, family, property and labour</span></li>
               <li><b>3</b><span>document formats reviewed clause by clause: PDF, DOCX and TXT</span></li>
-              <li><b>Team</b><span>project with three contributors on GitHub</span></li>
+              <li><b>My part</b><span>the FastAPI backend, and the deployment on Render and Vercel, in a team of three</span></li>
             </ul>
             <ul class="chips" aria-label="Built with"><li>React 18</li><li>Tailwind CSS</li><li>FastAPI</li><li>LangChain</li><li>Gemini</li><li>PostgreSQL (pgvector)</li><li>PyMuPDF</li><li>Vercel</li><li>Render</li></ul>
             <div class="links">
@@ -565,41 +571,48 @@
         </tr>
         <tr>
           <td class="num">05</td>
+          <td class="svc">TransitOps<small>API, React build and its own PostgreSQL in one service</small></td>
+          <td class="host">Render<small>free tier; demo data rebuilds on restart</small></td>
+          <td class="stc"><span class="st" data-st="transitops"><i class="dot"></i><span class="tx">Sleeps when idle</span></span><button class="wake" type="button" data-wake="transitops">Wake</button></td>
+          <td class="go"><a class="btn sm ghost" href="https://transitops-1xru.onrender.com/" target="_blank" rel="noopener">Open <span class="arr" aria-hidden="true">↗</span></a></td>
+        </tr>
+        <tr>
+          <td class="num">06</td>
           <td class="svc">Zenith PM<small>Next.js application</small></td>
           <td class="host">Vercel<small>PostgreSQL on Neon</small></td>
           <td class="stc"><span class="st" data-st="zenith"><i class="dot ok"></i><span class="tx">Live</span></span></td>
           <td class="go"><a class="btn sm ghost" href="https://zenith-project-management.vercel.app/" target="_blank" rel="noopener">Open <span class="arr" aria-hidden="true">↗</span></a></td>
         </tr>
         <tr>
-          <td class="num">06</td>
+          <td class="num">07</td>
           <td class="svc">NebulaStream<small>Transcoding console</small></td>
           <td class="host">Vercel<small>React single-page app</small></td>
           <td class="stc"><span class="st" data-st="nebula"><i class="dot ok"></i><span class="tx">Live</span></span></td>
           <td class="go"><a class="btn sm ghost" href="https://nebulastream-alpha.vercel.app/" target="_blank" rel="noopener">Open <span class="arr" aria-hidden="true">↗</span></a></td>
         </tr>
         <tr>
-          <td class="num">07</td>
+          <td class="num">08</td>
           <td class="svc">LeafGuard AI<small>Upload, predict, history and dashboard</small></td>
           <td class="host">Vercel<small>React single-page app</small></td>
           <td class="stc"><span class="st" data-st="leafguard"><i class="dot ok"></i><span class="tx">Live</span></span></td>
           <td class="go"><a class="btn sm ghost" href="https://leaveguarai.vercel.app/" target="_blank" rel="noopener">Open <span class="arr" aria-hidden="true">↗</span></a></td>
         </tr>
         <tr>
-          <td class="num">08</td>
+          <td class="num">09</td>
           <td class="svc">SatQuery AI<small>Map workspace</small></td>
           <td class="host">GitHub Pages<small>same domain as this site</small></td>
           <td class="stc"><span class="st" data-st="satquery"><i class="dot ok"></i><span class="tx">Live</span></span></td>
           <td class="go"><a class="btn sm ghost" href="https://gangadhar017.github.io/Lunar_circle/" target="_blank" rel="noopener">Open <span class="arr" aria-hidden="true">↗</span></a></td>
         </tr>
         <tr>
-          <td class="num">09</td>
+          <td class="num">10</td>
           <td class="svc">SatQuery API<small>FastAPI gateway with interactive docs</small></td>
           <td class="host">Render<small>Docker, free tier</small></td>
           <td class="stc"><span class="st" data-st="satapi"><i class="dot"></i><span class="tx">Sleeps when idle</span></span><button class="wake" type="button" data-wake="satapi">Wake</button></td>
           <td class="go"><a class="btn sm ghost" href="https://satquery-ai-skyy.onrender.com/docs" target="_blank" rel="noopener">Docs <span class="arr" aria-hidden="true">↗</span></a></td>
         </tr>
         <tr>
-          <td class="num">10</td>
+          <td class="num">11</td>
           <td class="svc">Juris<small>Legal research workspace; its API runs separately on Render</small></td>
           <td class="host">Vercel<small>React single-page app</small></td>
           <td class="stc"><span class="st" data-st="juris"><i class="dot ok"></i><span class="tx">Live</span></span></td>

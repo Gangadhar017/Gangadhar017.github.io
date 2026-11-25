@@ -134,6 +134,7 @@
     vigilapi: { url: 'https://vigilops.onrender.com/api/health' },
     dealflow: { url: 'https://dealflow360-t22l.onrender.com/' },
     tag: { url: 'https://tag-coding-platform1.onrender.com/' },
+    transitops: { url: 'https://transitops-1xru.onrender.com/api/health' },
     satapi: { url: 'https://satquery-ai-skyy.onrender.com/docs' }
   };
   var state = {};
@@ -250,13 +251,13 @@
     ['VigilOps', 'cloud', 2026, 'Python', 'Monitoring, incidents, configuration security and approved fixes in one Compose stack.', 'live'],
     ['SLM-agent-Lab', 'ai', 2026, 'Python', 'Evaluation harness, LoRA sweep and quantisation study for small tool-calling agents.'],
     ['DealFlow-v1', 'product', 2026, 'JavaScript', 'DealFlow360: quote-to-cash sales operations with discount risk scoring and approval routing.', 'live'],
-    ['TransitOps', 'product', 2026, 'JavaScript', 'Fleet operations platform with 37 end-to-end tests and atomic dispatch transactions.'],
+    ['TransitOps', 'product', 2026, 'JavaScript', 'Fleet operations platform with 37 end-to-end tests and atomic dispatch transactions.', 'live'],
     ['TAG-CODING-PLATFORM', 'product', 2025, 'JavaScript', 'Code judge and live interview room: Monaco, Socket.IO, WebRTC and a Docker compiler image.', 'live'],
     ['Zenith-Project-Management', 'product', 2026, 'JavaScript', 'Project management with live Kanban boards, shared cursors and Gemini tools.', 'live'],
     ['NebulaStream-video-processing-system', 'cloud', 2026, 'JavaScript', 'Queue-driven video transcoding: BullMQ, Redis and an FFmpeg worker.', 'live'],
     ['LeaveGuard-AI', 'ai', 2026, 'Python', 'LeafGuard AI: plant-disease classification from a leaf photo, 80.34% test accuracy.', 'live'],
     ['Lunar_circle', 'ai', 2026, 'TypeScript', 'SatQuery AI: plain-language questions over satellite imagery (Smart India Hackathon, ISRO / SAC).', 'live'],
-    ['Juris', 'ai', 2026, 'JavaScript', 'Legal research, contract review and drafting assistant for Indian law. Team project, in a teammate\'s repository.', 'live', 'https://github.com/raiyashu2004/Juris'],
+    ['Juris', 'ai', 2026, 'JavaScript', 'Legal research, contract review and drafting assistant for Indian law. Team project: I worked on the backend and the deployment.', 'live', 'https://github.com/raiyashu2004/Juris'],
     ['Smart-Incident-Management-Platform', 'product', 2026, 'Java', 'Incident ticketing on Spring Boot microservices: gateway, Kafka events, Redis locks, SLA tracking, Angular 19.'],
     ['starbucks-kubernetes', 'cloud', 2026, 'TypeScript', 'DevSecOps pipeline: Jenkins, SonarQube, Trivy and Terraform taking a Next.js app to Amazon EKS with Prometheus and Grafana.'],
     ['CloudShield', 'cloud', 2026, 'JavaScript', 'The prototype that became VigilOps: five policy checks, alert rules and approval-gated remediation.'],
