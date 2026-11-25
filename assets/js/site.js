@@ -129,6 +129,7 @@
     zenith: { url: 'https://zenith-project-management.vercel.app/', auto: true },
     nebula: { url: 'https://nebulastream-alpha.vercel.app/', auto: true },
     leafguard: { url: 'https://leaveguarai.vercel.app/', auto: true },
+    juris: { url: 'https://botjuris-six.vercel.app/', auto: true },
     satquery: { url: onDomain ? location.origin + '/Lunar_circle/' : 'https://gangadhar017.github.io/Lunar_circle/', auto: true },
     vigilapi: { url: 'https://vigilops.onrender.com/api/health' },
     dealflow: { url: 'https://dealflow360-t22l.onrender.com/' },
@@ -255,6 +256,7 @@
     ['NebulaStream-video-processing-system', 'cloud', 2026, 'JavaScript', 'Queue-driven video transcoding: BullMQ, Redis and an FFmpeg worker.', 'live'],
     ['LeaveGuard-AI', 'ai', 2026, 'Python', 'LeafGuard AI: plant-disease classification from a leaf photo, 80.34% test accuracy.', 'live'],
     ['Lunar_circle', 'ai', 2026, 'TypeScript', 'SatQuery AI: plain-language questions over satellite imagery (Smart India Hackathon, ISRO / SAC).', 'live'],
+    ['Juris', 'ai', 2026, 'JavaScript', 'Legal research, contract review and drafting assistant for Indian law. Team project, in a teammate\'s repository.', 'live', 'https://github.com/raiyashu2004/Juris'],
     ['Smart-Incident-Management-Platform', 'product', 2026, 'Java', 'Incident ticketing on Spring Boot microservices: gateway, Kafka events, Redis locks, SLA tracking, Angular 19.'],
     ['starbucks-kubernetes', 'cloud', 2026, 'TypeScript', 'DevSecOps pipeline: Jenkins, SonarQube, Trivy and Terraform taking a Next.js app to Amazon EKS with Prometheus and Grafana.'],
     ['CloudShield', 'cloud', 2026, 'JavaScript', 'The prototype that became VigilOps: five policy checks, alert rules and approval-gated remediation.'],
@@ -294,7 +296,7 @@
     if (!idx) return;
     var rows = REPOS.filter(function (r) { return cat === 'all' || r[1] === cat; });
     idx.innerHTML = rows.map(function (r, i) {
-      return '<a class="idx-row" href="' + GH + encodeURIComponent(r[0]) + '" target="_blank" rel="noopener">' +
+      return '<a class="idx-row" href="' + (r[6] || GH + encodeURIComponent(r[0])) + '" target="_blank" rel="noopener">' +
         '<span class="i">' + String(i + 1).padStart(2, '0') + '</span>' +
         '<span class="t">' + esc(r[0]) + (r[5] ? '<em>Live</em>' : '') + '</span>' +
         '<span class="d">' + esc(r[4]) + '</span>' +
@@ -358,6 +360,7 @@
       ['Projects', 'NebulaStream', 'video transcoding', go('#nebula')],
       ['Projects', 'LeafGuard AI', 'computer vision', go('#leafguard')],
       ['Projects', 'SatQuery AI', 'remote sensing', go('#satquery')],
+      ['Projects', 'Juris', 'legal research', go('#juris')],
       ['Elsewhere', 'GitHub', 'Gangadhar017', open('https://github.com/Gangadhar017')],
       ['Elsewhere', 'LinkedIn', 'in/gangadhar17', open('https://www.linkedin.com/in/gangadhar17')],
       ['Elsewhere', 'LeetCode, main profile', 'Gangadhar_cs23', open('https://leetcode.com/u/Gangadhar_cs23/')],
