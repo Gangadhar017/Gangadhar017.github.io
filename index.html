@@ -1,0 +1,819 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gangadhar Singh — Cloud, DevOps and AI systems</title>
+<meta name="description" content="Gangadhar Singh builds cloud systems, watches them run and writes down where they break. Final-year B.Tech (Cloud Computing), GLA University. Live projects, an evaluation harness for small AI agents, nine cloud certifications.">
+<meta name="author" content="Gangadhar Singh">
+<link rel="canonical" href="https://gangadharsingh.me/">
+<meta name="theme-color" content="#f2eee5">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gangadharsingh.me/">
+<meta property="og:title" content="Gangadhar Singh — Cloud, DevOps and AI systems">
+<meta property="og:description" content="I ship systems, watch them run, and write down exactly where they break. Live projects, research on small AI agents, nine cloud certifications.">
+<meta property="og:image" content="https://gangadharsingh.me/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<script>(function(){var d=document.documentElement;d.classList.add('js');var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='dark'&&t!=='light')t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';d.setAttribute('data-theme',t)})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Geist+Mono:wght@400;500;600&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Gangadhar Singh","url":"https://gangadharsingh.me/","image":"https://gangadharsingh.me/assets/img/gangadhar-singh.webp","jobTitle":"Cloud and DevOps engineer","description":"Final-year B.Tech Computer Science (Cloud Computing) student at GLA University building cloud, DevOps and AI systems.","alumniOf":{"@type":"CollegeOrUniversity","name":"GLA University"},"address":{"@type":"PostalAddress","addressLocality":"Gurugram","addressCountry":"IN"},"knowsAbout":["Cloud computing","DevOps","Kubernetes","Docker","Terraform","CI/CD","LLM evaluation","Full-stack development"],"sameAs":["https://github.com/Gangadhar017","https://www.linkedin.com/in/gangadhar17","https://leetcode.com/u/Gangadhar_cs23/","https://leetcode.com/u/Gangadhar_Singh/","https://codeforces.com/profile/gangadhar_017","https://learn.microsoft.com/en-us/users/gangadharsingh-9927/"]}
+</script>
+</head>
+<body>
+<a class="skip" href="#work">Skip to the work</a>
+
+<div class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Gangadhar Singh, back to top">
+      <span class="brand-mark" aria-hidden="true">GS</span>
+      <span class="brand-text">gangadharsingh.me</span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#fleet">Live</a>
+      <a href="#practice">Practice</a>
+      <a href="#path">Experience</a>
+      <a href="#creds">Credentials</a>
+      <a href="#index">Index</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="top-actions">
+      <button class="tool" type="button" data-cmdk aria-label="Open the command palette"><span class="t">Jump to</span> <kbd id="kbd">Ctrl K</kbd><span class="m">Menu</span></button>
+      <button class="tool" type="button" id="theme" aria-label="Switch between light and dark theme">
+        <svg class="moon" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.2 1.2a6.8 6.8 0 1 0 8.6 8.6A5.6 5.6 0 0 1 6.2 1.2Z"/></svg>
+        <svg class="sun" viewBox="0 0 16 16" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M8 1v2M8 13v2M1 8h2M13 8h2M3 3l1.4 1.4M11.6 11.6 13 13M13 3l-1.4 1.4M4.4 11.6 3 13"/><rect x="5.5" y="5.5" width="5" height="5" fill="currentColor"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-meta">
+      <span class="label">Portfolio / 2026–27</span>
+      <span class="label avail"><i class="dot ok live"></i>Open to internships and full-time roles · graduating 2027</span>
+      <span class="label" id="clock">Gurugram, India</span>
+    </div>
+
+    <h1 class="name" id="name" aria-label="Gangadhar Singh"><span class="name-in"><span class="w"><span>Gangadhar</span></span> <span class="w"><span>Singh<i class="o">.</i></span></span></span></h1>
+
+    <div class="hero-grid">
+      <div class="id">
+        <div class="portrait"><img src="assets/img/gangadhar-singh.webp" width="200" height="200" alt="Portrait of Gangadhar Singh"></div>
+        <dl class="spec">
+          <div><dt>Role</dt><dd>Cloud · DevOps · AI systems</dd></div>
+          <div><dt>Degree</dt><dd>B.Tech CSE (Cloud Computing), GLA University, 2023–27</dd></div>
+          <div><dt>CPI</dt><dd>8.25 / 10</dd></div>
+          <div><dt>Leads</dt><dd>Cloud Club, GLA University (President)</dd></div>
+          <div><dt>Base</dt><dd>Gurugram, India</dd></div>
+        </dl>
+      </div>
+
+      <div>
+        <p class="lede">I ship systems, watch them run, and write down <span class="serif">exactly where they break.</span></p>
+        <p class="sublede">Cloud and DevOps by training: Docker, Kubernetes, Terraform and CI/CD across AWS, Azure, GCP and OCI. Now I apply the same habits to AI agents. <b>Seven of my projects are live</b>; the always-on ones were checked from your browser when this page opened.</p>
+        <div class="cta">
+          <a class="btn" href="#work">See the work <span class="arr down" aria-hidden="true">↓</span></a>
+          <a class="btn ghost" href="https://github.com/Gangadhar017" target="_blank" rel="noopener">GitHub <span class="arr" aria-hidden="true">↗</span></a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/gangadhar17" target="_blank" rel="noopener">LinkedIn <span class="arr" aria-hidden="true">↗</span></a>
+          <a class="btn ghost" href="#contact">Contact</a>
+        </div>
+      </div>
+
+      <aside class="board" aria-label="Live deployments">
+        <div class="board-head">
+          <span class="label"><i class="dot ok live"></i>Live deployments</span>
+          <span class="board-sum" id="fleet-sum">7 services</span>
+        </div>
+        <ul class="board-list">
+          <li><a href="#vigilops"><span class="n">VigilOps</span><span class="h">vercel + render</span></a><span class="st" data-st="vigilops"><i class="dot ok"></i><span class="tx">Live</span></span></li>
+          <li><a href="#zenith"><span class="n">Zenith PM</span><span class="h">vercel</span></a><span class="st" data-st="zenith"><i class="dot ok"></i><span class="tx">Live</span></span></li>
+          <li><a href="#nebula"><span class="n">NebulaStream</span><span class="h">vercel</span></a><span class="st" data-st="nebula"><i class="dot ok"></i><span class="tx">Live</span></span></li>
+          <li><a href="#leafguard"><span class="n">LeafGuard AI</span><span class="h">vercel</span></a><span class="st" data-st="leafguard"><i class="dot ok"></i><span class="tx">Live</span></span></li>
+          <li><a href="#satquery"><span class="n">SatQuery AI</span><span class="h">github pages</span></a><span class="st" data-st="satquery"><i class="dot ok"></i><span class="tx">Live</span></span></li>
+          <li><a href="#dealflow"><span class="n">DealFlow360</span><span class="h">render</span></a><span class="st" data-st="dealflow"><i class="dot"></i><span class="tx">Wakes on request</span></span></li>
+          <li><a href="#tag"><span class="n">TAG Platform</span><span class="h">render</span></a><span class="st" data-st="tag"><i class="dot"></i><span class="tx">Wakes on request</span></span></li>
+        </ul>
+        <a class="board-foot" href="#fleet">What each one runs on, and how to wake the sleeping ones ↓</a>
+      </aside>
+    </div>
+  </div>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <ul>
+        <li><b>7</b> projects live right now</li>
+        <li><b>554</b> LeetCode problems solved</li>
+        <li>LeetCode contest rating <b>1726</b> · top 12.4%</li>
+        <li><b>9</b> cloud certifications · Azure · AWS · OCI · GCP</li>
+        <li>President, Cloud Club · GLA University</li>
+        <li><b>300+</b> students taught in workshops</li>
+        <li><b>37/37</b> end-to-end tests on TransitOps</li>
+        <li><b>50</b> public repositories</li>
+        <li>B.Tech CSE (Cloud Computing) · CPI <b>8.25</b></li>
+        <li>Codeforces max <b>1220</b></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="wrap" aria-labelledby="how-h">
+  <div class="strip-head"><span class="label" id="how-h">How I work</span></div>
+  <div class="principles">
+    <div class="principle rv">
+      <span class="label">01 / Tested</span>
+      <h3>If a rule matters, a test proves it.</h3>
+      <p><b>37 of 37</b> end-to-end tests on TransitOps, a <b>41-step</b> run through DealFlow360, <b>40</b> automated tests on LeafGuard AI. The numbers are in each README, next to the command that reproduces them.</p>
+    </div>
+    <div class="principle rv">
+      <span class="label">02 / Observable</span>
+      <h3>You cannot fix what you cannot see.</h3>
+      <p>Prometheus and Alertmanager in VigilOps, second-by-second progress streams in NebulaStream, a full step-by-step log of every agent run in SLM-Agent Lab. I build the instrument panel with the system.</p>
+    </div>
+    <div class="principle rv">
+      <span class="label">03 / Honest</span>
+      <h3>Limits go in writing.</h3>
+      <p>My write-ups say what is not built, what is simulated and what did not work, including the fine-tuning run that <b>failed to beat its own baseline</b>. A result you can trust is worth more than a result that flatters.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 01 WORK ============ -->
+<section class="section" id="work" aria-labelledby="work-h">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="label sec-no">01 / Selected work</span>
+        <h2 id="work-h">Selected <span class="serif">work</span></h2>
+      </div>
+      <p class="sec-note">Nine projects out of fifty public repositories. Every number below comes from that project's own README, tests or results files.</p>
+    </div>
+
+    <!-- VigilOps -->
+    <article class="case" id="vigilops">
+      <header class="case-head">
+        <div class="case-title">
+          <span class="case-no">01</span>
+          <div>
+            <h3>VigilOps</h3>
+            <p class="kicker">Monitoring, incidents, security checks and approved fixes in one console.</p>
+          </div>
+        </div>
+        <dl class="meta">
+          <div><dt>Year</dt><dd>2026</dd></div>
+          <div><dt>Context</dt><dd>B.Tech major project</dd></div>
+          <div><dt>Status</dt><dd><span class="st" data-st="vigilops"><i class="dot ok"></i><span class="tx">Live</span></span></dd></div>
+        </dl>
+      </header>
+      <div class="case-body">
+        <figure class="shot case-visual rv">
+          <div class="shot-bar">
+            <span class="sq" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="shot-url">vigilops / console</span>
+            <div class="shot-tabs" role="tablist" aria-label="VigilOps screens">
+              <button type="button" role="tab" aria-selected="true" data-src="assets/img/vigilops-overview.webp" data-alt="VigilOps overview: active incidents, open security findings, pending approvals, and live request-rate and error-rate charts for the monitored services.">Overview</button>
+              <button type="button" role="tab" aria-selected="false" data-src="assets/img/vigilops-incident.webp" data-alt="VigilOps incident detail with its timeline and linked alert.">Incident</button>
+              <button type="button" role="tab" aria-selected="false" data-src="assets/img/vigilops-remediation.webp" data-alt="VigilOps remediation request showing approval, execution and verification steps.">Fix</button>
+              <button type="button" role="tab" aria-selected="false" data-src="assets/img/vigilops-findings.webp" data-alt="VigilOps security findings from the configuration scanner.">Findings</button>
+              <button type="button" role="tab" aria-selected="false" data-src="assets/img/vigilops-orbitcrate.webp" data-alt="OrbitCrate, the demo storefront that VigilOps monitors.">Demo store</button>
+            </div>
+          </div>
+          <img class="shot-img" src="assets/img/vigilops-overview.webp" width="1360" height="850" alt="VigilOps overview: active incidents, open security findings, pending approvals, and live request-rate and error-rate charts for the monitored services.">
+          <figcaption>Screens from the running stack. OrbitCrate, the storefront, is the application being monitored.</figcaption>
+        </figure>
+        <div class="case-text rv">
+          <p class="case-lead">One stack that <b>monitors</b> a demo storefront with Prometheus and Alertmanager, turns real alerts into <b>tracked incidents</b>, and scans YAML cloud configuration for security mistakes. A fix is requested, approved by an administrator, applied by a restricted worker and then verified. Every step lands in an audit log that cannot be edited.</p>
+          <ul class="facts">
+            <li><b>8</b><span>containers from one <code>docker compose up</code></span></li>
+            <li><b>5</b><span>scanner rules, SEC-001 to SEC-005</span></li>
+            <li><b>3</b><span>checks before a fix counts as verified</span></li>
+            <li><b>0</b><span>edits the audit table accepts: a PostgreSQL trigger rejects UPDATE and DELETE</span></li>
+          </ul>
+          <ul class="chips" aria-label="Built with">
+            <li>FastAPI</li><li>React</li><li>PostgreSQL 16</li><li>Prometheus</li><li>Alertmanager</li><li>Caddy</li><li>Docker Compose</li><li>Gemini</li><li>GitHub Actions</li><li>Playwright</li>
+          </ul>
+          <div class="links">
+            <a class="btn sm" href="https://frontend-sigma-one-0hshbxb8vj.vercel.app/" target="_blank" rel="noopener">Open live <span class="arr" aria-hidden="true">↗</span></a>
+            <a class="btn sm ghost" href="https://github.com/Gangadhar017/VigilOps" target="_blank" rel="noopener">Source <span class="arr" aria-hidden="true">↗</span></a>
+          </div>
+          <p class="note">Grew out of an earlier prototype, CloudShield. The README lists what is not built: no AWS integration yet, and two automated actions only.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- SLM-Agent Lab -->
+    <article class="case flip" id="slm">
+      <header class="case-head">
+        <div class="case-title">
+          <span class="case-no">02</span>
+          <div>
+            <h3>SLM-Agent Lab</h3>
+            <p class="kicker">How small can a tool-calling AI agent get before it breaks, and where?</p>
+          </div>
+        </div>
+        <dl class="meta">
+          <div><dt>Year</dt><dd>2026</dd></div>
+          <div><dt>Context</dt><dd>Independent research</dd></div>
+          <div><dt>Hardware</dt><dd>4-core laptop, no GPU</dd></div>
+        </dl>
+      </header>
+      <div class="case-body">
+        <figure class="lab case-visual rv" aria-label="Results from SLM-Agent Lab">
+          <div class="lab-head"><span class="label">Results / 150-task subset</span><span class="label">from the README tables</span></div>
+          <div class="lab-grid">
+            <div class="plot wide">
+              <span class="label">Fig. 1</span>
+              <h4>Most failures are planning: the wrong tool, or no tool at all.</h4>
+              <div class="stack-row">
+                <span class="k">Granite 4.0 · 350M<small>58.0% correct</small></span>
+                <div class="stack" role="img" aria-label="Granite 4.0 350M: 87 correct, 47 planning failures, 9 syntax failures, 7 reasoning failures out of 150 tasks.">
+                  <i class="seg c" style="--w:58%"></i><i class="seg p" style="--w:31.33%"></i><i class="seg s" style="--w:6%"></i><i class="seg r" style="--w:4.67%"></i>
+                </div>
+              </div>
+              <div class="stack-row">
+                <span class="k">Qwen2.5 · 0.5B<small>31.3% correct</small></span>
+                <div class="stack" role="img" aria-label="Qwen2.5 0.5B: 47 correct, 82 planning failures, 14 syntax failures, 7 reasoning failures out of 150 tasks.">
+                  <i class="seg c" style="--w:31.33%"></i><i class="seg p" style="--w:54.67%"></i><i class="seg s" style="--w:9.33%"></i><i class="seg r" style="--w:4.67%"></i>
+                </div>
+              </div>
+              <div class="legend" aria-hidden="true">
+                <span><i class="c"></i>Correct</span><span><i class="p"></i>Planning failure</span><span><i class="s"></i>Syntax failure</span><span><i class="r"></i>Reasoning failure</span>
+              </div>
+              <p class="cap">Qwen answered from memory without calling a tool on 56 of 150 tasks. One accuracy number hides that; a failure label per task shows it.</p>
+            </div>
+            <div class="plot">
+              <span class="label">Fig. 2 / Quantisation</span>
+              <h4>8-bit is free. 4-bit falls off a cliff.</h4>
+              <div class="bars">
+                <div class="bar-row"><span class="k">fp32<small>1,400 MB</small></span><div class="track"><i class="fill" style="--w:58%"></i></div><span class="v">58.0%</span></div>
+                <div class="bar-row"><span class="k">f16<small>708 MB</small></span><div class="track"><i class="fill" style="--w:59.3%"></i></div><span class="v">59.3%</span></div>
+                <div class="bar-row"><span class="k">int8<small>378 MB</small></span><div class="track"><i class="fill" style="--w:58.7%"></i></div><span class="v">58.7%</span></div>
+                <div class="bar-row"><span class="k">int4<small>237 MB</small></span><div class="track"><i class="fill hot" style="--w:20.7%"></i></div><span class="v">20.7%</span></div>
+              </div>
+              <p class="cap">At int4, 59.3% of tool calls come out malformed. It breaks syntax, not reasoning.</p>
+            </div>
+            <div class="plot">
+              <span class="label">Fig. 3 / LoRA rank sweep</span>
+              <h4>290 examples did not beat the untuned model.</h4>
+              <div class="bars">
+                <div class="bar-row"><span class="k">untuned</span><div class="track"><i class="fill" style="--w:59.3%"></i></div><span class="v">59.3%</span></div>
+                <div class="bar-row"><span class="k">rank 1</span><div class="track"><i class="fill dim" style="--w:38.7%"></i><i class="ref" style="--at:59.3%"></i></div><span class="v">38.7%</span></div>
+                <div class="bar-row"><span class="k">rank 4</span><div class="track"><i class="fill dim" style="--w:48%"></i><i class="ref" style="--at:59.3%"></i></div><span class="v">48.0%</span></div>
+                <div class="bar-row"><span class="k">rank 16</span><div class="track"><i class="fill dim" style="--w:54%"></i><i class="ref" style="--at:59.3%"></i></div><span class="v">54.0%</span></div>
+              </div>
+              <p class="cap">Accuracy rises with rank but never passes the baseline. Reported as measured.</p>
+            </div>
+          </div>
+        </figure>
+        <div class="case-text rv">
+          <p class="case-lead">An evaluation harness that runs small language models, IBM Granite 4.0 and Qwen2.5, through <b>300 exact-answer tasks</b> with four deterministic tools. It logs every step and gives every wrong answer exactly one failure label. Then it fine-tunes with LoRA and measures what quantisation costs once the model is served.</p>
+          <ul class="facts">
+            <li><b>300</b><span>test tasks, 56 of them held out as out-of-distribution</span></li>
+            <li><b>4</b><span>tools: calculator, unit converter, SQL, document search</span></li>
+            <li><b>24</b><span>unit tests; every run can resume where it stopped</span></li>
+            <li><b>58%</b><span>accuracy for Granite-350M, against 31.3% for Qwen-0.5B on the same tasks</span></li>
+          </ul>
+          <ul class="chips" aria-label="Built with">
+            <li>Python</li><li>PyTorch</li><li>Hugging Face Transformers</li><li>PEFT / LoRA</li><li>llama.cpp (GGUF)</li><li>SQLite</li><li>BM25</li><li>pytest</li>
+          </ul>
+          <div class="links">
+            <a class="btn sm" href="https://github.com/Gangadhar017/SLM-agent-Lab" target="_blank" rel="noopener">Read the write-up <span class="arr" aria-hidden="true">↗</span></a>
+          </div>
+          <p class="note">A vLLM-on-Kubernetes serving path is written and documented but was never run, because there was no GPU. The README says so.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- DealFlow360 -->
+    <article class="case" id="dealflow">
+      <header class="case-head">
+        <div class="case-title">
+          <span class="case-no">03</span>
+          <div>
+            <h3>DealFlow360</h3>
+            <p class="kicker">Quote-to-cash sales operations with pricing discipline built in.</p>
+          </div>
+        </div>
+        <dl class="meta">
+          <div><dt>Year</dt><dd>2026</dd></div>
+          <div><dt>Context</dt><dd>Odoo Hackathon</dd></div>
+          <div><dt>Status</dt><dd><span class="st" data-st="dealflow"><i class="dot"></i><span class="tx">Wakes on request</span></span></dd></div>
+        </dl>
+      </header>
+      <div class="case-body">
+        <figure class="shot case-visual rv">
+          <div class="shot-bar">
+            <span class="sq" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="shot-url">dealflow360-t22l.onrender.com</span>
+          </div>
+          <a class="shot-link" href="https://dealflow360-t22l.onrender.com/" target="_blank" rel="noopener"><img class="shot-img" loading="lazy" decoding="async" src="assets/img/dealflow.webp" width="1440" height="900" alt="DealFlow360 sign-in screen listing its capabilities and one-click demo logins for sales rep, sales manager, finance and administrator."></a>
+          <figcaption>The sign-in screen has a one-click demo account for every role.</figcaption>
+        </figure>
+        <div class="case-text rv">
+          <p class="case-lead">Sales reps build quotations; each one is <b>scored 0 to 100 for discount risk</b> and routed for approval on its own. Confirmed orders are split across warehouses and billed as one-time invoices plus prorated subscriptions. Customers negotiate, track delivery and pay in a separate portal.</p>
+          <ul class="facts">
+            <li><b>28</b><span>tables in one embedded SQLite database</span></li>
+            <li><b>60+</b><span>REST endpoints behind role checks</span></li>
+            <li><b>17 + 41</b><span>unit tests, plus a 41-step end-to-end run</span></li>
+            <li><b>4 + 1</b><span>internal roles, plus a customer portal on its own token</span></li>
+          </ul>
+          <div class="route" aria-label="How a quotation is routed by risk score">
+            <div class="route-head"><span class="label">Approval routing by risk score</span></div>
+            <div class="route-row"><span class="sc">0</span><span class="to"><b>Approved automatically</b></span></div>
+            <div class="route-row"><span class="sc">1 – 39</span><span class="to"><b>Sales Manager</b></span></div>
+            <div class="route-row"><span class="sc">40 – 100</span><span class="to"><b>Sales Manager</b><i>→</i><b>Finance</b></span></div>
+          </div>
+          <ul class="chips" aria-label="Built with">
+            <li>Node.js</li><li>Express</li><li>SQLite</li><li>React 19</li><li>Vite</li><li>JWT</li><li>PDFKit</li><li>Docker</li>
+          </ul>
+          <div class="links">
+            <a class="btn sm" href="https://dealflow360-t22l.onrender.com/" target="_blank" rel="noopener">Open live <span class="arr" aria-hidden="true">↗</span></a>
+            <a class="btn sm ghost" href="https://github.com/Gangadhar017/DealFlow-v1" target="_blank" rel="noopener">Source <span class="arr" aria-hidden="true">↗</span></a>
+          </div>
+          <p class="note">Free hosting: the first load after an idle spell can take up to a minute.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- six more -->
+    <div class="cards">
+
+      <article class="card rv" id="transitops">
+        <div class="card-top"><span class="label">04 / Odoo Hackathon · 2026</span><span class="st"><i class="dot"></i><span class="tx">Source</span></span></div>
+        <figure class="lab guard" aria-label="What TransitOps checks before a dispatch">
+          <div class="lab-head"><span class="label">Dispatch guard</span><span class="label">37 / 37 tests</span></div>
+          <ol class="guard-list">
+            <li><span class="q">Vehicle in the shop?</span><span class="a">Refused</span></li>
+            <li><span class="q">Driver's licence expired?</span><span class="a">Refused</span></li>
+            <li><span class="q">Cargo over the vehicle's capacity?</span><span class="a">Refused</span></li>
+            <li class="pass"><span class="q">All clear</span><span class="a">One transaction: trip dispatched, vehicle and driver marked on trip</span></li>
+          </ol>
+        </figure>
+        <h3>TransitOps</h3>
+        <p class="kicker">A fleet platform that refuses bad dispatches.</p>
+        <p class="desc">Dispatch, maintenance, drivers and cost analytics for a transport fleet, with four roles enforced on both the API and the interface.</p>
+        <ul class="pts">
+          <li><b>37 / 37</b><span>end-to-end tests passing: every business rule, validation and permission</span></li>
+          <li><b>1</b><span>atomic transaction for each dispatch, completion or cancellation</span></li>
+          <li><b>0</b><span>chart libraries; the charts are hand-written SVG</span></li>
+        </ul>
+        <ul class="chips" aria-label="Built with"><li>React</li><li>Node.js</li><li>Express</li><li>PostgreSQL</li><li>Prisma</li><li>JWT</li></ul>
+        <div class="links">
+          <a class="btn sm ghost" href="https://github.com/Gangadhar017/TransitOps" target="_blank" rel="noopener">Source <span class="arr" aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+
+      <article class="card rv" id="tag">
+        <div class="card-top"><span class="label">05 / 2025</span><span class="st" data-st="tag"><i class="dot"></i><span class="tx">Wakes on request</span></span></div>
+        <figure class="shot">
+          <div class="shot-bar"><span class="sq" aria-hidden="true"><i></i><i></i><i></i></span><span class="shot-url">tag-coding-platform1.onrender.com</span></div>
+          <a class="shot-link" href="https://tag-coding-platform1.onrender.com/" target="_blank" rel="noopener"><img class="shot-img" loading="lazy" decoding="async" src="assets/img/tag.webp" width="1440" height="900" alt="TAG home screen with entry points for the problem set, discussions, joining an interview and hosting an interview."></a>
+        </figure>
+        <h3>TAG Coding Platform</h3>
+        <p class="kicker">A code judge and a live interview room in one.</p>
+        <p class="desc">Practise algorithm problems with a real compile-and-judge loop, or open an interview room: a shared editor, audio and video, synced test cases and a shared timer.</p>
+        <ul class="pts">
+          <li><b>4</b><span>compilers in the sandbox image: gcc, g++, javac, python3</span></li>
+          <li><b>13</b><span>seeded problems, from Two Sum to Climbing Stairs</span></li>
+          <li><b>P2P</b><span>audio and video over WebRTC; code sync over Socket.IO</span></li>
+        </ul>
+        <ul class="chips" aria-label="Built with"><li>React</li><li>Redux Toolkit</li><li>Monaco Editor</li><li>Node.js</li><li>MongoDB</li><li>Socket.IO</li><li>WebRTC</li><li>Docker</li></ul>
+        <div class="links">
+          <a class="btn sm" href="https://tag-coding-platform1.onrender.com/" target="_blank" rel="noopener">Open live <span class="arr" aria-hidden="true">↗</span></a>
+          <a class="btn sm ghost" href="https://github.com/Gangadhar017/TAG-CODING-PLATFORM" target="_blank" rel="noopener">Source <span class="arr" aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+
+      <article class="card rv" id="zenith">
+        <div class="card-top"><span class="label">06 / 2026</span><span class="st" data-st="zenith"><i class="dot ok"></i><span class="tx">Live</span></span></div>
+        <figure class="shot">
+          <div class="shot-bar"><span class="sq" aria-hidden="true"><i></i><i></i><i></i></span><span class="shot-url">zenith-project-management.vercel.app</span></div>
+          <a class="shot-link" href="https://zenith-project-management.vercel.app/" target="_blank" rel="noopener"><img class="shot-img" loading="lazy" decoding="async" src="assets/img/zenith.webp" width="1440" height="900" alt="Zenith landing page above a preview of a Kanban board with backlog, in-progress and done columns."></a>
+        </figure>
+        <h3>Zenith PM</h3>
+        <p class="kicker">Project management with live boards and Gemini built in.</p>
+        <p class="desc">Kanban boards with live presence and shared cursors, wiki documents, sprint planning and role-based workspaces. Gemini turns prompts into tickets, plans sprints and summarises meetings.</p>
+        <ul class="pts">
+          <li><b>34</b><span>API endpoints across auth, projects, tasks, documents, AI and billing</span></li>
+          <li><b>4</b><span>permission levels: owner, admin, member, viewer</span></li>
+          <li><b>Live</b><span>presence rooms over Socket.io, with stale connections evicted</span></li>
+        </ul>
+        <ul class="chips" aria-label="Built with"><li>Next.js 15</li><li>React 19</li><li>Express</li><li>TypeScript</li><li>Prisma</li><li>PostgreSQL (Neon)</li><li>Socket.io</li><li>Gemini</li><li>Docker</li></ul>
+        <div class="links">
+          <a class="btn sm" href="https://zenith-project-management.vercel.app/" target="_blank" rel="noopener">Open live <span class="arr" aria-hidden="true">↗</span></a>
+          <a class="btn sm ghost" href="https://github.com/Gangadhar017/Zenith-Project-Management" target="_blank" rel="noopener">Source <span class="arr" aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+
+      <article class="card rv" id="nebula">
+        <div class="card-top"><span class="label">07 / 2026</span><span class="st" data-st="nebula"><i class="dot ok"></i><span class="tx">Live</span></span></div>
+        <figure class="shot">
+          <div class="shot-bar"><span class="sq" aria-hidden="true"><i></i><i></i><i></i></span><span class="shot-url">nebulastream-alpha.vercel.app</span></div>
+          <a class="shot-link" href="https://nebulastream-alpha.vercel.app/" target="_blank" rel="noopener"><img class="shot-img" loading="lazy" decoding="async" src="assets/img/nebulastream.webp" width="1440" height="900" alt="NebulaStream landing page describing queue telemetry, webcam recording, network feed ingest and an FFmpeg logging console."></a>
+        </figure>
+        <h3>NebulaStream</h3>
+        <p class="kicker">Upload a video; a queue and an FFmpeg worker do the rest.</p>
+        <p class="desc">Upload a file, record from the webcam or import a stream. A background worker transcodes to several resolutions and formats, burns in a watermark, extracts audio and cuts thumbnails while progress streams to the dashboard. Designed for AWS ECS Fargate with S3 storage.</p>
+        <ul class="pts">
+          <li><b>500 MB</b><span>upload limit per video</span></li>
+          <li><b>1 s</b><span>between progress messages over Server-Sent Events</span></li>
+          <li><b>3</b><span>output resolutions: 1080p, 720p and 480p, in mp4 or webm</span></li>
+        </ul>
+        <ul class="chips" aria-label="Built with"><li>React</li><li>Express</li><li>TypeScript</li><li>BullMQ</li><li>Redis</li><li>Prisma</li><li>MongoDB</li><li>FFmpeg</li><li>Docker</li></ul>
+        <div class="links">
+          <a class="btn sm" href="https://nebulastream-alpha.vercel.app/" target="_blank" rel="noopener">Open live <span class="arr" aria-hidden="true">↗</span></a>
+          <a class="btn sm ghost" href="https://github.com/Gangadhar017/NebulaStream-video-processing-system" target="_blank" rel="noopener">Source <span class="arr" aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+
+      <article class="card rv" id="leafguard">
+        <div class="card-top"><span class="label">08 / 2026</span><span class="st" data-st="leafguard"><i class="dot ok"></i><span class="tx">Live</span></span></div>
+        <figure class="shot">
+          <div class="shot-bar">
+            <span class="sq" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="shot-url">leaveguarai.vercel.app</span>
+            <div class="shot-tabs" role="tablist" aria-label="LeafGuard AI screens">
+              <button type="button" role="tab" aria-selected="true" data-src="assets/img/leafguard-result.webp" data-alt="LeafGuard AI result: a tomato leaf classified as healthy with 61.64% confidence, the next two candidates, and prevention advice.">Result</button>
+              <button type="button" role="tab" aria-selected="false" data-src="assets/img/leafguard-dashboard.webp" data-alt="LeafGuard AI statistics dashboard.">Dashboard</button>
+              <button type="button" role="tab" aria-selected="false" data-src="assets/img/leafguard-home.webp" data-alt="LeafGuard AI home page.">Home</button>
+            </div>
+          </div>
+          <img class="shot-img" loading="lazy" decoding="async" src="assets/img/leafguard-result.webp" width="1440" height="900" alt="LeafGuard AI result: a tomato leaf classified as healthy with 61.64% confidence, the next two candidates, and prevention advice.">
+        </figure>
+        <h3>LeafGuard AI</h3>
+        <p class="kicker">A leaf photo in; a diagnosis and a treatment out.</p>
+        <p class="desc">Classifies tomato and potato leaf photos into nine classes and returns the confidence, the next two candidates and what to do about it. Classical computer vision feeding a Random Forest, so it runs on a CPU.</p>
+        <ul class="pts">
+          <li><b>80.34%</b><span>test accuracy on a held-out PlantVillage split</span></li>
+          <li><b>36.9 ms</b><span>mean per prediction on CPU, from a 4.51 MB model</span></li>
+          <li><b>40</b><span>automated tests across backend, model and frontend</span></li>
+        </ul>
+        <ul class="chips" aria-label="Built with"><li>FastAPI</li><li>OpenCV</li><li>scikit-learn</li><li>React</li><li>MongoDB</li><li>Docker Compose</li><li>GitHub Actions</li></ul>
+        <div class="links">
+          <a class="btn sm" href="https://leaveguarai.vercel.app/" target="_blank" rel="noopener">Open live <span class="arr" aria-hidden="true">↗</span></a>
+          <a class="btn sm ghost" href="https://github.com/Gangadhar017/LeaveGuard-AI" target="_blank" rel="noopener">Source <span class="arr" aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+
+      <article class="card rv" id="satquery">
+        <div class="card-top"><span class="label">09 / Smart India Hackathon · 2026</span><span class="st" data-st="satquery"><i class="dot ok"></i><span class="tx">Live</span></span></div>
+        <figure class="shot">
+          <div class="shot-bar"><span class="sq" aria-hidden="true"><i></i><i></i><i></i></span><span class="shot-url">gangadharsingh.me/Lunar_circle</span></div>
+          <a class="shot-link" href="https://gangadhar017.github.io/Lunar_circle/" target="_blank" rel="noopener"><img class="shot-img" loading="lazy" decoding="async" src="assets/img/satquery.webp" width="1440" height="900" alt="SatQuery AI workspace: a dark map of Ahmedabad with a query box and layer controls."></a>
+        </figure>
+        <h3>SatQuery AI</h3>
+        <p class="kicker">Ask a satellite image a question in plain language.</p>
+        <p class="desc">Type a question; the system works out the task, checks that the images are compatible, routes to the right remote-sensing model and shows the answer on a map with an execution trace and a report. Built with team Lunar Circle for an ISRO / SAC problem statement.</p>
+        <ul class="pts">
+          <li><b>4</b><span>one-click scenarios: urban growth, flood mapping, water, land cover</span></li>
+          <li><b>NDVI</b><span>and NDWI computed by a rasterio and numpy raster engine</span></li>
+          <li><b>PS 26167</b><span>Smart India Hackathon problem statement</span></li>
+        </ul>
+        <ul class="chips" aria-label="Built with"><li>React 19</li><li>TypeScript</li><li>Leaflet</li><li>FastAPI</li><li>rasterio</li><li>QLoRA</li><li>Docker</li></ul>
+        <div class="links">
+          <a class="btn sm" href="https://gangadhar017.github.io/Lunar_circle/" target="_blank" rel="noopener">Open live <span class="arr" aria-hidden="true">↗</span></a>
+          <a class="btn sm ghost" href="https://github.com/Gangadhar017/Lunar_circle" target="_blank" rel="noopener">Source <span class="arr" aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 LIVE ============ -->
+<section class="section" id="fleet" aria-labelledby="fleet-h">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="label sec-no">02 / Deployments</span>
+        <h2 id="fleet-h">Live <span class="serif">right now</span></h2>
+      </div>
+      <p class="sec-note">Hosts that never sleep are checked from your browser when the page opens. Render's free tier sleeps after 15 idle minutes, so those are contacted only when you press Wake.</p>
+    </div>
+
+    <table class="fleet">
+      <thead>
+        <tr><th scope="col">No.</th><th scope="col">Service</th><th scope="col">Runs on</th><th scope="col">Status</th><th scope="col"><span class="sr-only">Open</span></th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="num">01</td>
+          <td class="svc">VigilOps console<small>Landing page and operations console</small></td>
+          <td class="host">Vercel<small>static build, proxies /api</small></td>
+          <td class="stc"><span class="st" data-st="vigilops"><i class="dot ok"></i><span class="tx">Live</span></span></td>
+          <td class="go"><a class="btn sm ghost" href="https://frontend-sigma-one-0hshbxb8vj.vercel.app/" target="_blank" rel="noopener">Open <span class="arr" aria-hidden="true">↗</span></a></td>
+        </tr>
+        <tr>
+          <td class="num">02</td>
+          <td class="svc">VigilOps backend<small>API, worker, Prometheus and Alertmanager in one container</small></td>
+          <td class="host">Render<small>Docker, free tier</small></td>
+          <td class="stc"><span class="st" data-st="vigilapi"><i class="dot"></i><span class="tx">Sleeps when idle</span></span><button class="wake" type="button" data-wake="vigilapi">Wake</button></td>
+          <td class="go"><a class="btn sm ghost" href="https://vigilops.onrender.com/api/health" target="_blank" rel="noopener">Health <span class="arr" aria-hidden="true">↗</span></a></td>
+        </tr>
+        <tr>
+          <td class="num">03</td>
+          <td class="svc">DealFlow360<small>API and React build served by one Node process</small></td>
+          <td class="host">Render<small>free tier; demo data re-seeds on restart</small></td>
+          <td class="stc"><span class="st" data-st="dealflow"><i class="dot"></i><span class="tx">Sleeps when idle</span></span><button class="wake" type="button" data-wake="dealflow">Wake</button></td>
+          <td class="go"><a class="btn sm ghost" href="https://dealflow360-t22l.onrender.com/" target="_blank" rel="noopener">Open <span class="arr" aria-hidden="true">↗</span></a></td>
+        </tr>
+        <tr>
+          <td class="num">04</td>
+          <td class="svc">TAG Coding Platform<small>Express, Socket.IO and the compiler image</small></td>
+          <td class="host">Render<small>Docker, free tier</small></td>
+          <td class="stc"><span class="st" data-st="tag"><i class="dot"></i><span class="tx">Sleeps when idle</span></span><button class="wake" type="button" data-wake="tag">Wake</button></td>
+          <td class="go"><a class="btn sm ghost" href="https://tag-coding-platform1.onrender.com/" target="_blank" rel="noopener">Open <span class="arr" aria-hidden="true">↗</span></a></td>
+        </tr>
+        <tr>
+          <td class="num">05</td>
+          <td class="svc">Zenith PM<small>Next.js application</small></td>
+          <td class="host">Vercel<small>PostgreSQL on Neon</small></td>
+          <td class="stc"><span class="st" data-st="zenith"><i class="dot ok"></i><span class="tx">Live</span></span></td>
+          <td class="go"><a class="btn sm ghost" href="https://zenith-project-management.vercel.app/" target="_blank" rel="noopener">Open <span class="arr" aria-hidden="true">↗</span></a></td>
+        </tr>
+        <tr>
+          <td class="num">06</td>
+          <td class="svc">NebulaStream<small>Transcoding console</small></td>
+          <td class="host">Vercel<small>React single-page app</small></td>
+          <td class="stc"><span class="st" data-st="nebula"><i class="dot ok"></i><span class="tx">Live</span></span></td>
+          <td class="go"><a class="btn sm ghost" href="https://nebulastream-alpha.vercel.app/" target="_blank" rel="noopener">Open <span class="arr" aria-hidden="true">↗</span></a></td>
+        </tr>
+        <tr>
+          <td class="num">07</td>
+          <td class="svc">LeafGuard AI<small>Upload, predict, history and dashboard</small></td>
+          <td class="host">Vercel<small>React single-page app</small></td>
+          <td class="stc"><span class="st" data-st="leafguard"><i class="dot ok"></i><span class="tx">Live</span></span></td>
+          <td class="go"><a class="btn sm ghost" href="https://leaveguarai.vercel.app/" target="_blank" rel="noopener">Open <span class="arr" aria-hidden="true">↗</span></a></td>
+        </tr>
+        <tr>
+          <td class="num">08</td>
+          <td class="svc">SatQuery AI<small>Map workspace</small></td>
+          <td class="host">GitHub Pages<small>same domain as this site</small></td>
+          <td class="stc"><span class="st" data-st="satquery"><i class="dot ok"></i><span class="tx">Live</span></span></td>
+          <td class="go"><a class="btn sm ghost" href="https://gangadhar017.github.io/Lunar_circle/" target="_blank" rel="noopener">Open <span class="arr" aria-hidden="true">↗</span></a></td>
+        </tr>
+        <tr>
+          <td class="num">09</td>
+          <td class="svc">SatQuery API<small>FastAPI gateway with interactive docs</small></td>
+          <td class="host">Render<small>Docker, free tier</small></td>
+          <td class="stc"><span class="st" data-st="satapi"><i class="dot"></i><span class="tx">Sleeps when idle</span></span><button class="wake" type="button" data-wake="satapi">Wake</button></td>
+          <td class="go"><a class="btn sm ghost" href="https://satquery-ai-skyy.onrender.com/docs" target="_blank" rel="noopener">Docs <span class="arr" aria-hidden="true">↗</span></a></td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="fleet-foot"><span>A browser check can tell that a host answered and how fast, not what it said. “Responding” means exactly that.</span><button type="button" id="recheck">Check the always-on hosts again</button></p>
+  </div>
+</section>
+
+<!-- ============ 03 PRACTICE ============ -->
+<section class="section" id="practice" aria-labelledby="practice-h">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="label sec-no">03 / Practice</span>
+        <h2 id="practice-h">Problem <span class="serif">solving</span></h2>
+      </div>
+      <p class="sec-note">Two LeetCode profiles and Codeforces, almost all of it in Java. LeetCode figures are a snapshot from 26 November 2026; the Codeforces chart refreshes itself.</p>
+    </div>
+
+    <div class="score">
+      <div class="panel rv">
+        <div class="panel-head"><span class="label">LeetCode / main profile</span><a href="https://leetcode.com/u/Gangadhar_cs23/" target="_blank" rel="noopener">Gangadhar_cs23 ↗</a></div>
+        <p class="big">554<small>solved</small></p>
+        <div class="split" role="img" aria-label="134 easy, 314 medium, 106 hard"><i style="--n:134"></i><i style="--n:314"></i><i style="--n:106"></i></div>
+        <p class="split-key"><span>Easy <b>134</b></span><span>Medium <b>314</b></span><span>Hard <b>106</b></span></p>
+        <dl class="kv">
+          <div><dt>Global rank</dt><dd>177,091</dd></div>
+          <div><dt>Longest streak</dt><dd>87 days</dd></div>
+          <div><dt>Badges</dt><dd>100 Days 2025 · 100 Days 2026</dd></div>
+          <div><dt>Solved in Java</dt><dd>541</dd></div>
+        </dl>
+      </div>
+
+      <div class="panel rv">
+        <div class="panel-head"><span class="label">LeetCode / contest profile</span><a href="https://leetcode.com/u/Gangadhar_Singh/" target="_blank" rel="noopener">Gangadhar_Singh ↗</a></div>
+        <p class="big">1726<small>rating</small></p>
+        <div class="split" role="img" aria-label="80 easy, 163 medium, 57 hard"><i style="--n:80"></i><i style="--n:163"></i><i style="--n:57"></i></div>
+        <p class="split-key"><span>Easy <b>80</b></span><span>Medium <b>163</b></span><span>Hard <b>57</b></span></p>
+        <dl class="kv">
+          <div><dt>Standing</dt><dd>Top 12.42% of 894,294</dd></div>
+          <div><dt>Rated contests</dt><dd>20</dd></div>
+          <div><dt>Solved</dt><dd>300</dd></div>
+          <div><dt>Longest streak</dt><dd>77 days</dd></div>
+        </dl>
+      </div>
+
+      <div class="panel rv">
+        <div class="panel-head"><span class="label">Codeforces</span><a href="https://codeforces.com/profile/gangadhar_017" target="_blank" rel="noopener">gangadhar_017 ↗</a></div>
+        <p class="big"><span id="cf-max">1220</span><small>peak</small></p>
+        <svg class="spark" id="cf-spark" viewBox="0 0 300 96" role="img" aria-label="Codeforces rating across rated contests, rising from 568 to a peak of 1220."></svg>
+        <dl class="kv">
+          <div><dt>Current rating</dt><dd id="cf-now">1169</dd></div>
+          <div><dt>Best rank</dt><dd>Pupil</dd></div>
+          <div><dt>Rated contests</dt><dd id="cf-n">9</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 EXPERIENCE ============ -->
+<section class="section" id="path" aria-labelledby="path-h">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="label sec-no">04 / Experience</span>
+        <h2 id="path-h">Experience</h2>
+      </div>
+      <p class="sec-note">Leading a student cloud community, an internship in data, freelance work with Azure AI, and hackathons in between.</p>
+    </div>
+
+    <div class="rows">
+      <div class="row rv">
+        <p class="when">Aug 2024 — <span class="now">Present</span></p>
+        <div><h3>President</h3><p class="org">Cloud Club, GLA University</p></div>
+        <ul>
+          <li>Ran <b>5+ workshops and bootcamps</b> on cloud, DevOps and containers for <b>300+ students</b>.</li>
+          <li>Mentored <b>50+ juniors</b> on cloud certifications, open-source work and developer tooling.</li>
+        </ul>
+      </div>
+      <div class="row rv">
+        <p class="when">Jan 2025 — <span class="now">Present</span></p>
+        <div><h3>AWS Educate ETC Member</h3><p class="org">AWS Educate Student Community India</p></div>
+        <ul>
+          <li>Completed <b>8+ hands-on labs</b> across compute, IAM, S3 and RDS, and VPC networking.</li>
+          <li>Built CI/CD workflows with GitHub Actions and Jenkins; set up alerting in CloudWatch and Azure Monitor.</li>
+        </ul>
+      </div>
+      <div class="row rv">
+        <p class="when">Jul — Aug 2024</p>
+        <div><h3>AI Developer, freelance</h3><p class="org">Microsoft Learn project</p></div>
+        <ul>
+          <li>Built speech recognition and text-to-speech features with Azure AI Services, the Azure Speech SDK, REST APIs and the Web Speech API.</li>
+        </ul>
+      </div>
+      <div class="row rv">
+        <p class="when">May — Jun 2024</p>
+        <div><h3>Data Analyst Intern</h3><p class="org">SkillCred</p></div>
+        <ul>
+          <li>Cleaned and analysed <b>50,000+ financial records</b> with Python (Pandas, NumPy) and SQL to benchmark banks against their peers.</li>
+          <li>Built Power BI dashboards of key performance indicators that fed business decisions.</li>
+        </ul>
+      </div>
+      <div class="row rv">
+        <p class="when">2025 — 2026</p>
+        <div><h3>Hackathons and programmes</h3><p class="org">Built under a deadline</p></div>
+        <ul>
+          <li><b>Smart India Hackathon</b>: SatQuery AI with team Lunar Circle for an ISRO / SAC problem statement; JanMat, a sentiment-analysis system, the year before.</li>
+          <li><b>Odoo Hackathon</b>: TransitOps and DealFlow360.</li>
+          <li><b>Cognizant Digital Nurture</b>: Java full-stack engineering track, covering Spring Boot, JPA, JUnit, Mockito and microservices.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sub-head"><h3>Education</h3><span class="label">Where it started</span></div>
+    <div class="rows">
+      <div class="row rv">
+        <p class="when">2023 — 2027</p>
+        <div><h3>B.Tech, Computer Science &amp; Engineering</h3><p class="org">GLA University, Mathura</p></div>
+        <ul>
+          <li>Specialisation in <b>Cloud Computing</b>. CPI <b>8.25 / 10</b>.</li>
+          <li>Major project: VigilOps, a secure cloud operations platform.</li>
+        </ul>
+      </div>
+      <div class="row rv">
+        <p class="when">2020 — 2022</p>
+        <div><h3>Senior Secondary and Secondary</h3><p class="org">Seth M.R. Jaipuria School, Varanasi</p></div>
+        <ul>
+          <li>Class XII in 2022; Class X in 2020 with <b>92%</b>.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 CREDENTIALS ============ -->
+<section class="section" id="creds" aria-labelledby="creds-h">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="label sec-no">05 / Credentials</span>
+        <h2 id="creds-h">Four <span class="serif">clouds</span></h2>
+      </div>
+      <p class="sec-note">Nine certifications across Microsoft Azure, AWS, Oracle Cloud and Google Cloud, plus 29 modules and 5 learning paths completed on Microsoft Learn.</p>
+    </div>
+
+    <div class="certs">
+      <div class="vendor rv">
+        <span class="label">Microsoft</span>
+        <h4>Azure</h4>
+        <ul>
+          <li>Azure Developer Associate<small>AZ-204</small></li>
+          <li>Azure Fundamentals<small>AZ-900</small></li>
+          <li>Azure AI Fundamentals<small>AI-900</small></li>
+          <li>Generative AI with Azure OpenAI<small>Microsoft Learn</small></li>
+        </ul>
+      </div>
+      <div class="vendor rv">
+        <span class="label">Amazon</span>
+        <h4>AWS</h4>
+        <ul>
+          <li>Cloud Foundations<small>AWS Academy</small></li>
+          <li>Serverless Computing<small>AWS Educate</small></li>
+        </ul>
+      </div>
+      <div class="vendor rv">
+        <span class="label">Oracle</span>
+        <h4>OCI</h4>
+        <ul>
+          <li>OCI Architect Associate<small>Oracle Cloud Infrastructure</small></li>
+          <li>OCI Foundations Associate<small>Oracle Cloud Infrastructure</small></li>
+        </ul>
+      </div>
+      <div class="vendor rv">
+        <span class="label">Google</span>
+        <h4>GCP</h4>
+        <ul>
+          <li>Google Cloud Fundamentals<small>Core Infrastructure</small></li>
+        </ul>
+      </div>
+    </div>
+    <p class="snap">Microsoft Learn transcript: Azure OpenAI, AI Vision, Document Intelligence, speech and language services, and an AI-agent path on Microsoft Foundry (April 2026). <a href="https://learn.microsoft.com/en-us/users/gangadharsingh-9927/" target="_blank" rel="noopener">View the profile ↗</a></p>
+
+    <div class="sub-head"><h3>Toolbox</h3><span class="label">What I reach for</span></div>
+    <dl class="matrix">
+      <div class="rv"><dt>Cloud</dt><dd>AWS<i>/</i>Microsoft Azure<i>/</i>Google Cloud<i>/</i>Oracle Cloud<i>/</i>Vercel<i>/</i>Render</dd></div>
+      <div class="rv"><dt>Containers and infrastructure</dt><dd>Docker<i>/</i>Docker Compose<i>/</i>Kubernetes<i>/</i>Terraform<i>/</i>Linux<i>/</i>Bash<i>/</i>Caddy<i>/</i>Nginx</dd></div>
+      <div class="rv"><dt>Delivery and quality</dt><dd>GitHub Actions<i>/</i>Jenkins<i>/</i>SonarQube<i>/</i>Trivy<i>/</i>Playwright<i>/</i>pytest<i>/</i>Vitest<i>/</i>Postman</dd></div>
+      <div class="rv"><dt>Observability</dt><dd>Prometheus<i>/</i>Alertmanager<i>/</i>Grafana<i>/</i>CloudWatch<i>/</i>Azure Monitor</dd></div>
+      <div class="rv"><dt>AI and machine learning</dt><dd>PyTorch<i>/</i>Hugging Face Transformers<i>/</i>PEFT and LoRA<i>/</i>llama.cpp<i>/</i>LLM evaluation<i>/</i>tool-calling agents<i>/</i>Gemini API<i>/</i>Azure AI Services<i>/</i>scikit-learn<i>/</i>OpenCV</dd></div>
+      <div class="rv"><dt>Backend and data</dt><dd>FastAPI<i>/</i>Node.js and Express<i>/</i>Spring Boot<i>/</i>PostgreSQL<i>/</i>MongoDB<i>/</i>SQLite<i>/</i>Redis<i>/</i>Prisma<i>/</i>Kafka<i>/</i>Power BI</dd></div>
+      <div class="rv"><dt>Frontend</dt><dd>React<i>/</i>Next.js<i>/</i>Vite<i>/</i>Tailwind CSS<i>/</i>Socket.IO<i>/</i>WebRTC</dd></div>
+      <div class="rv"><dt>Languages</dt><dd>Java<i>/</i>Python<i>/</i>JavaScript<i>/</i>TypeScript<i>/</i>SQL<i>/</i>Bash<i>/</i>C++</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============ 06 INDEX ============ -->
+<section class="section" id="index" aria-labelledby="index-h">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="label sec-no">06 / Index</span>
+        <h2 id="index-h">Everything <span class="serif">else</span></h2>
+      </div>
+      <p class="sec-note">Every public repository with something in it, coursework and early experiments included. Each row opens the code on GitHub.</p>
+    </div>
+    <div class="filters" id="filters" role="group" aria-label="Filter repositories by kind"></div>
+    <div class="idx" id="idx">
+      <noscript><p class="snap">The index needs JavaScript. All of it is on <a href="https://github.com/Gangadhar017?tab=repositories">GitHub</a>.</p></noscript>
+    </div>
+    <p class="idx-foot">Forks, duplicates and empty repositories are left out. The complete list is on <a href="https://github.com/Gangadhar017?tab=repositories" target="_blank" rel="noopener">GitHub ↗</a></p>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ CONTACT ============ -->
+<footer class="contact" id="contact">
+  <div class="wrap">
+    <span class="label">07 / Contact</span>
+    <h2>Let's build something that <span class="serif">stays up.</span></h2>
+    <div class="mail-row">
+      <a class="mail" href="mailto:gangadhar000017@gmail.com">gangadhar000017@gmail.com</a>
+      <button class="btn sm" type="button" data-copy-email>Copy address</button>
+    </div>
+    <div class="socials">
+      <a href="https://github.com/Gangadhar017" target="_blank" rel="noopener"><span class="label">Code</span><b>GitHub ↗</b></a>
+      <a href="https://www.linkedin.com/in/gangadhar17" target="_blank" rel="noopener"><span class="label">Network</span><b>LinkedIn ↗</b></a>
+      <a href="https://leetcode.com/u/Gangadhar_cs23/" target="_blank" rel="noopener"><span class="label">Practice</span><b>LeetCode ↗</b></a>
+      <a href="https://codeforces.com/profile/gangadhar_017" target="_blank" rel="noopener"><span class="label">Contests</span><b>Codeforces ↗</b></a>
+      <a href="https://learn.microsoft.com/en-us/users/gangadharsingh-9927/" target="_blank" rel="noopener"><span class="label">Learning</span><b>Microsoft Learn ↗</b></a>
+    </div>
+    <div class="colophon">
+      <span>© <span id="yr">2026</span> Gangadhar Singh</span>
+      <span>Hand-written HTML, CSS and JavaScript. No framework, no tracker.</span>
+      <span><a href="https://github.com/Gangadhar017/Gangadhar017.github.io" target="_blank" rel="noopener">Source of this site ↗</a></span>
+    </div>
+  </div>
+</footer>
+
+<dialog class="cmdk" id="cmdk" aria-label="Command palette">
+  <div class="cmdk-in"><span aria-hidden="true">›</span><input type="text" placeholder="Jump to a section, a project or a profile" aria-label="Search" autocomplete="off" spellcheck="false"></div>
+  <div class="cmdk-list" role="listbox"></div>
+  <div class="cmdk-foot"><span>↑ ↓ move</span><span>Enter open</span><span>Esc close</span></div>
+</dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>
