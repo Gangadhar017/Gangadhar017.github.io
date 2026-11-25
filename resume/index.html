@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Résumé — Gangadhar Singh</title>
+<meta name="description" content="Résumé of Gangadhar Singh: cloud, DevOps and software engineering. Final-year B.Tech (Cloud Computing), GLA University.">
+<meta name="author" content="Gangadhar Singh">
+<link rel="canonical" href="https://gangadharsingh.me/resume/">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  /* One source for the web page and the PDF: the PDF is this page printed to A4. */
+  :root { --ink: #111110; --ink-2: #3d3b36; --ink-3: #6a675f; --rule: #cfcabd; --accent: #d93a17; --paper: #ffffff; --desk: #e9e4d8; }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--desk); color: var(--ink); font: 400 15px/1.42 "Instrument Sans", "Segoe UI", system-ui, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  p, ul, h1, h2, h3 { margin: 0; }
+  ul { padding: 0; list-style: none; }
+
+  .bar { max-width: 860px; margin: 0 auto; padding: 18px 20px; display: flex; justify-content: space-between; align-items: center; gap: 12px; font: 500 12px ui-monospace, Consolas, monospace; letter-spacing: 0.07em; text-transform: uppercase; }
+  .bar a { padding: 10px 14px; border: 1px solid #141310; }
+  .bar a.dl { background: #141310; color: #f2eee5; }
+  .bar a:hover { background: var(--accent); border-color: var(--accent); color: #140a06; }
+
+  .sheet { max-width: 860px; margin: 0 auto 48px; background: var(--paper); padding: clamp(22px, 5vw, 54px); border: 1px solid var(--rule); }
+
+  header { border-bottom: 2px solid var(--ink); padding-bottom: 0.7em; }
+  h1 { font: 900 3.5em/0.86 "Archivo", "Arial Narrow", Arial, sans-serif; font-stretch: 66%; letter-spacing: -0.01em; text-transform: uppercase; }
+  h1 i { font-style: normal; color: var(--accent); }
+  .role { margin-top: 0.45em; font-weight: 600; font-size: 1.02em; letter-spacing: 0.01em; }
+  .role span { font-weight: 400; color: var(--ink-2); }
+  .contact { display: flex; flex-wrap: wrap; gap: 0.1em 0; margin-top: 0.4em; color: var(--ink-2); font-size: 0.92em; }
+  .contact li:not(:last-child)::after { content: "|"; margin: 0 0.42em; color: var(--rule); }
+  .contact a:hover, .e a:hover, li a:hover { color: var(--accent); }
+
+  section { margin-top: 0.8em; }
+  h2 { font: 800 1.08em/1 "Archivo", "Arial Narrow", Arial, sans-serif; font-stretch: 78%; letter-spacing: 0.07em; text-transform: uppercase; padding-bottom: 0.32em; border-bottom: 1px solid var(--rule); margin-bottom: 0.5em; display: flex; align-items: center; gap: 0.5em; }
+  h2::before { content: ""; width: 0.5em; height: 0.5em; background: var(--accent); flex: none; }
+
+  .e + .e { margin-top: 0.5em; }
+  .e-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1em; }
+  h3 { font-size: 1em; font-weight: 700; line-height: 1.3; }
+  h3 span { font-weight: 400; color: var(--ink-2); }
+  .when { color: var(--ink-3); font-size: 0.92em; white-space: nowrap; }
+  .when a { color: var(--ink-2); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 2px; }
+  .tech { color: var(--ink-3); font-size: 0.92em; font-style: italic; }
+  .e ul { margin-top: 0.16em; }
+  .e li { padding-left: 0.95em; position: relative; color: var(--ink-2); }
+  .e li::before { content: "•"; position: absolute; left: 0.1em; color: var(--accent); }
+  .e li b, .sum b, .line b { color: var(--ink); font-weight: 600; }
+
+  .sum { color: var(--ink-2); }
+  .skills { display: grid; grid-template-columns: auto 1fr; gap: 0.14em 0.9em; }
+  .skills dt { font-weight: 700; white-space: nowrap; }
+  .skills dd { margin: 0; color: var(--ink-2); }
+  .line { color: var(--ink-2); }
+  .line + .line { margin-top: 0.14em; }
+
+  @media (max-width: 620px) {
+    body { font-size: 14px; }
+    .e-head { flex-direction: column; gap: 0; }
+    .skills { grid-template-columns: 1fr; }
+    .skills dd { margin-bottom: 0.3em; }
+    h1 { font-size: 2.7em; }
+  }
+
+  @page { size: A4; margin: 8.5mm 11.5mm; }
+  @media print {
+    body { background: #fff; font-size: 8.6pt; line-height: 1.29; }
+    .bar { display: none; }
+    .sheet { max-width: none; margin: 0; padding: 0; border: 0; }
+    section { break-inside: avoid; }
+    a { color: inherit; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <a href="/">← Portfolio</a>
+  <a class="dl" href="/Gangadhar_Singh_Resume.pdf" download>Download PDF ↓</a>
+</div>
+
+<main class="sheet">
+  <header>
+    <h1>Gangadhar Singh<i>.</i></h1>
+    <p class="role">Cloud, DevOps and Software Engineering <span>· Gurugram, India</span></p>
+    <ul class="contact">
+      <li><a href="tel:+917080255675">+91 7080255675</a></li>
+      <li><a href="mailto:gangadhar000017@gmail.com">gangadhar000017@gmail.com</a></li>
+      <li><a href="https://gangadharsingh.me/">gangadharsingh.me</a></li>
+      <li><a href="https://www.linkedin.com/in/gangadhar17">linkedin.com/in/gangadhar17</a></li>
+      <li><a href="https://github.com/Gangadhar017">github.com/Gangadhar017</a></li>
+    </ul>
+  </header>
+
+  <section>
+    <h2>Summary</h2>
+    <p class="sum">Final-year B.Tech (Cloud Computing) student who builds, deploys and monitors production-style systems; <b>seven projects are live</b> at gangadharsingh.me. Certified on Azure (AZ-204), AWS, Oracle Cloud and Google Cloud. Open to SDE, Cloud and DevOps roles.</p>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="e">
+      <div class="e-head"><h3>GLA University, Mathura <span>— B.Tech, Computer Science &amp; Engineering (Cloud Computing), CPI 8.25 / 10</span></h3><span class="when">2023 – 2027</span></div>
+    </div>
+    <div class="e">
+      <div class="e-head"><h3>Seth M.R. Jaipuria School, Varanasi <span>— Class XII, 89% (2022) · Class X, 92% (2020)</span></h3><span class="when">2019 – 2022</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <dl class="skills">
+      <dt>Cloud and infrastructure</dt><dd>AWS, Microsoft Azure, Google Cloud, Oracle Cloud, Docker, Kubernetes, Terraform, Linux, Bash</dd>
+      <dt>CI/CD and observability</dt><dd>GitHub Actions, Jenkins, SonarQube, Trivy, Prometheus, Alertmanager, Grafana, Playwright, pytest</dd>
+      <dt>Languages</dt><dd>Java, Python, JavaScript, TypeScript, SQL, C++ · data structures and algorithms, OOP</dd>
+      <dt>Backend and data</dt><dd>FastAPI, Node.js and Express, Spring Boot, REST APIs, JWT, PostgreSQL, MongoDB, SQLite, Redis, Prisma</dd>
+      <dt>Frontend and AI</dt><dd>React, Next.js · PyTorch, Hugging Face Transformers, LoRA (PEFT), LLM evaluation, Azure AI Services</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+
+    <div class="e">
+      <div class="e-head"><h3>VigilOps <span>— Secure Cloud Operations Platform (B.Tech major project)</span></h3><span class="when"><a href="https://frontend-sigma-one-0hshbxb8vj.vercel.app/">Live</a> · <a href="https://github.com/Gangadhar017/VigilOps">GitHub</a> · 2026</span></div>
+      <p class="tech">FastAPI, React, PostgreSQL, Prometheus, Alertmanager, Caddy, Docker Compose, GitHub Actions, Playwright</p>
+      <ul>
+        <li>Built a monitoring and incident platform as an <b>8-container Docker Compose stack</b>: Prometheus and Alertmanager alerts become tracked incidents with a five-state lifecycle and one active incident per alert fingerprint.</li>
+        <li>Implemented a YAML configuration scanner (<b>5 security rules</b>) and approval-gated remediation: a fix is requested, approved by an administrator, applied by a restricted worker and <b>verified with 3 checks</b>.</li>
+        <li>Made the audit trail <b>append-only</b> (a PostgreSQL trigger rejects UPDATE and DELETE), enforced roles in the backend, and deployed on Render and Vercel.</li>
+      </ul>
+    </div>
+
+    <div class="e">
+      <div class="e-head"><h3>DealFlow360 <span>— Quote-to-Cash Sales Operations Platform (Odoo Hackathon)</span></h3><span class="when"><a href="https://dealflow360-t22l.onrender.com/">Live</a> · <a href="https://github.com/Gangadhar017/DealFlow-v1">GitHub</a> · 2026</span></div>
+      <p class="tech">Node.js, Express, SQLite, React, JWT, PDFKit, Docker</p>
+      <ul>
+        <li>Architected a <b>28-table data layer and 60+ REST endpoints</b> with dual-token JWT authentication separating internal users from portal customers; verified by <b>17 unit tests and a 41-step end-to-end run</b>.</li>
+        <li>Engineered a rule-based discount-risk engine (score 0 to 100) that routes quotations to Sales Manager and Finance automatically, plus subscription billing with proration, multi-warehouse fulfilment and server-rendered PDF invoices.</li>
+      </ul>
+    </div>
+
+    <div class="e">
+      <div class="e-head"><h3>Production-Grade DevSecOps Pipeline</h3><span class="when"><a href="https://github.com/Gangadhar017/starbucks-kubernetes">GitHub</a> · 2025</span></div>
+      <p class="tech">Jenkins, GitHub Actions, Docker, Kubernetes (Amazon EKS), Terraform, SonarQube, Trivy, Prometheus, Grafana</p>
+      <ul>
+        <li>Automated CI/CD with static-analysis (SonarQube) and vulnerability-scan (Trivy) gates; provisioned AWS infrastructure with Terraform and deployed a containerised application to Kubernetes with Prometheus and Grafana monitoring.</li>
+      </ul>
+    </div>
+
+    <div class="e">
+      <div class="e-head"><h3>SLM-Agent Lab <span>— Evaluating and Compressing Small Tool-Calling AI Agents</span></h3><span class="when"><a href="https://github.com/Gangadhar017/SLM-agent-Lab">GitHub</a> · 2026</span></div>
+      <p class="tech">Python, PyTorch, Hugging Face Transformers, PEFT / LoRA, llama.cpp, SQLite, pytest</p>
+      <ul>
+        <li>Built an evaluation harness (4 deterministic tools, <b>300 exact-answer tasks</b>, full step logs, one failure label per wrong answer): IBM Granite-350M scored <b>58.0% against 31.3%</b> for Qwen2.5-0.5B, and most failures were planning, not syntax.</li>
+        <li>Measured quantisation on a CPU laptop: 8-bit kept accuracy (58.7%, 378 MB) while 4-bit fell to 20.7% with 59% malformed tool calls; ran a LoRA rank sweep; 24 unit tests.</li>
+      </ul>
+    </div>
+
+    <div class="e">
+      <div class="e-head"><h3>TransitOps <span>— Fleet Operations Platform (Odoo Hackathon)</span></h3><span class="when" id="transitops-links"><a href="https://github.com/Gangadhar017/TransitOps">GitHub</a> · 2026</span></div>
+      <p class="tech">React, Node.js, Express, PostgreSQL, Prisma, JWT</p>
+      <ul>
+        <li>Atomic Prisma transactions for every dispatch, four-role access control, and <b>37 of 37 end-to-end tests</b> passing.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Experience and Leadership</h2>
+    <div class="e">
+      <div class="e-head"><h3>President <span>— Cloud Club, GLA University</span></h3><span class="when">Aug 2024 – Present</span></div>
+      <ul><li>Organised <b>5+ workshops and bootcamps</b> on cloud, DevOps and containers for <b>300+ students</b>; mentored 50+ juniors on certifications and tooling. Also an AWS Educate ETC member since Jan 2025 (8+ hands-on labs).</li></ul>
+    </div>
+    <div class="e">
+      <div class="e-head"><h3>AI Developer, freelance <span>— Microsoft Learn project</span></h3><span class="when">Jul – Aug 2024</span></div>
+      <ul><li>Built speech-recognition and text-to-speech features with Azure AI Services, the Azure Speech SDK and REST APIs.</li></ul>
+    </div>
+    <div class="e">
+      <div class="e-head"><h3>Data Analyst Intern <span>— SkillCred</span></h3><span class="when">May – Jun 2024</span></div>
+      <ul><li>Analysed <b>50,000+ financial records</b> with Python (Pandas, NumPy) and SQL to benchmark banks; built Power BI KPI dashboards.</li></ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Certifications and Achievements</h2>
+    <p class="line"><b>Microsoft Azure:</b> Developer Associate (AZ-204), AZ-900, AI-900, Generative AI · <b>AWS:</b> Cloud Foundations, Serverless Computing · <b>Oracle Cloud:</b> OCI Architect Associate, OCI Foundations Associate · <b>Google Cloud:</b> GCP Fundamentals</p>
+    <p class="line"><b>Problem solving:</b> 550+ problems solved on <a href="https://leetcode.com/u/Gangadhar_cs23/">LeetCode</a>; <a href="https://leetcode.com/u/Gangadhar_Singh/">contest rating</a> <b>1726 (top 12.4%)</b>; <a href="https://codeforces.com/profile/gangadhar_017">Codeforces</a> peak 1220</p>
+    <p class="line"><b>Hackathons:</b> Smart India Hackathon (SatQuery AI, an ISRO / SAC problem statement) · Odoo Hackathon (TransitOps, DealFlow360)</p>
+  </section>
+</main>
+
+</body>
+</html>
