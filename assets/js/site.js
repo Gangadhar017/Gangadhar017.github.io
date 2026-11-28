@@ -12,17 +12,345 @@
 
   /* ---------- theme ---------- */
 
-  function setTheme(t) {
+  var cordCtrl = null;
+  function setTheme(t, fromCord) {
     document.documentElement.setAttribute('data-theme', t);
     try { localStorage.setItem('theme', t); } catch (e) {}
     var m = $('meta[name="theme-color"]');
     if (m) m.setAttribute('content', t === 'dark' ? '#0b0b0a' : '#f2eee5');
+    var hitEl = $('#cordHit');
+    if (hitEl) hitEl.setAttribute('aria-checked', String(t === 'dark'));
+    if (cordCtrl) {
+      if (!fromCord) cordCtrl.tug();
+      else cordCtrl.redraw();
+    }
   }
-  function toggleTheme() {
-    setTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+  function toggleTheme(fromCord) {
+    setTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark', fromCord === true);
   }
   var themeBtn = $('#theme');
-  if (themeBtn) themeBtn.addEventListener('click', toggleTheme);
+  if (themeBtn) themeBtn.addEventListener('click', function () { toggleTheme(false); });
+
+  /* ---------- hanging pull cord ---------- */
+
+  cordCtrl = (function pullCord() {
+    var wrap = $('#cord'), cv = $('.cord__cv', wrap), hit = $('#cordHit');
+    if (!wrap || !cv || !hit || !cv.getContext) return null;
+    var ctx = cv.getContext('2d');
+    var N = 20, G = 4600, ITER = 16;
+    var dpr = 1, W = 120, H = 220;
+    var L = 104, EXT_MAX = 56, HIDDEN = 74, seg = 9, ax = 60, thick = 2.6;
+    var pts = [];
+    var ext = 0, extV = 0, armed = true, suppressToggle = false, hover = false;
+    var grab = -1, grabOff = { x: 0, y: 0 }, target = null, ptr = null, ptrPrev = null;
+    var downAt = 0, downPos = null, moved = 0, t = 0;
+    var lastT = 0, rafId = 0, isRunning = false, restFrames = 0;
+
+    function isDark() {
+      return document.documentElement.getAttribute('data-theme') === 'dark';
+    }
+
+    function layout() {
+      var vw = window.innerWidth;
+      L = vw < 640 ? 74 : 104;
+      EXT_MAX = vw < 640 ? 44 : 56;
+      HIDDEN = EXT_MAX + 18;
+      W = 120;
+      H = Math.round(L + EXT_MAX + 56);
+      wrap.style.height = H + 'px';
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      cv.width = Math.round(W * dpr);
+      cv.height = Math.round(H * dpr);
+      var newAx = W / 2;
+      seg = (L + HIDDEN) / N;
+      if (!pts.length) {
+        for (var i = 0; i <= N; i++) {
+          var x = newAx, y = -HIDDEN + i * seg;
+          pts.push({ x: x, y: y, px: x, py: y, w: i === 0 ? 0 : i === N ? 0.28 : 1 });
+        }
+      } else {
+        var dx = newAx - ax;
+        for (var j = 0; j < pts.length; j++) { pts[j].x += dx; pts[j].px += dx; }
+      }
+      ax = newAx;
+    }
+
+    function playSwitchSound() {
+      try {
+        var AC = window.AudioContext || window.webkitAudioContext;
+        if (!AC) return;
+        var actx = new AC();
+        var osc = actx.createOscillator();
+        var g = actx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(820, actx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(130, actx.currentTime + 0.045);
+        g.gain.setValueAtTime(0.2, actx.currentTime);
+        g.gain.exponentialRampToValueAtTime(0.001, actx.currentTime + 0.045);
+        osc.connect(g);
+        g.connect(actx.destination);
+        osc.start();
+        osc.stop(actx.currentTime + 0.05);
+      } catch (e) {}
+    }
+
+    function step(dt) {
+      t += dt;
+      if (grab < 0) {
+        var K = 760, C = 21;
+        extV += (-K * ext - C * extV) * dt;
+        ext += extV * dt;
+      }
+      if (ext > EXT_MAX * 0.72 && armed) {
+        armed = false;
+        if (!suppressToggle) {
+          toggleTheme(true);
+          playSwitchSound();
+        }
+      }
+      if (ext < EXT_MAX * 0.22) {
+        armed = true;
+        if (extV <= 0) suppressToggle = false;
+      }
+
+      var a = pts[0];
+      a.x = a.px = ax;
+      a.y = a.py = -HIDDEN + ext;
+
+      var wind = Math.sin(t * 0.7) * 10 + Math.sin(t * 1.8 + 1.1) * 4;
+      var damp = grab >= 0 ? 0.992 : 0.986;
+      for (var i = 1; i <= N; i++) {
+        if (i === grab) continue;
+        var p = pts[i];
+        var vx = (p.x - p.px) * damp, vy = (p.y - p.py) * damp;
+        p.px = p.x; p.py = p.y;
+        p.x += vx + wind * dt * dt * (i / N);
+        p.y += vy + G * dt * dt;
+      }
+      if (grab >= 0 && target) {
+        var g = pts[grab];
+        g.px = g.x; g.py = g.y;
+        g.x = target.x; g.y = target.y;
+      }
+      for (var k = 0; k < ITER; k++) {
+        for (var idx = 0; idx < N; idx++) {
+          var p1 = pts[idx], p2 = pts[idx + 1];
+          var w1 = idx === grab ? 0 : p1.w, w2 = idx + 1 === grab ? 0 : p2.w;
+          var sw = w1 + w2;
+          if (!sw) continue;
+          var dx = p2.x - p1.x, dy = p2.y - p1.y;
+          var d = Math.hypot(dx, dy) || 1e-6;
+          var diff = (d - seg) / d / sw;
+          p1.x += dx * diff * w1; p1.y += dy * diff * w1;
+          p2.x -= dx * diff * w2; p2.y -= dy * diff * w2;
+        }
+      }
+      for (var m = 1; m <= N; m++) {
+        var pm = pts[m];
+        if (pm.x < 14) pm.x = 14; else if (pm.x > W - 14) pm.x = W - 14;
+        if (pm.y > H - 36) pm.y = H - 36;
+      }
+    }
+
+    function updateDrag() {
+      if (grab < 0 || !ptr) return;
+      var tx = ptr.x - grabOff.x, ty = ptr.y - grabOff.y;
+      var bx = ax, by = -HIDDEN;
+      var reach = grab * seg;
+      var dx = tx - bx, dy = ty - by, d = Math.hypot(dx, dy) || 1e-6;
+      var need = d - reach;
+      if (need > EXT_MAX) {
+        var over = need - EXT_MAX;
+        var allowed = reach + EXT_MAX + over * 0.14 / (1 + over / 160);
+        tx = bx + dx / d * allowed; ty = by + dy / d * allowed;
+        need = EXT_MAX;
+      }
+      var targetExt = Math.max(0, need);
+      var prevExt = ext;
+      ext += (targetExt - ext) * 0.55;
+      extV = (ext - prevExt) * 60;
+      target = { x: Math.max(14, Math.min(W - 14, tx)), y: Math.min(H - 36, ty) };
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, W * dpr, H * dpr);
+      ctx.save();
+      ctx.scale(dpr, dpr);
+
+      var dark = isDark();
+      ctx.beginPath();
+      ctx.moveTo(pts[0].x, pts[0].y);
+      for (var i = 1; i <= N; i++) ctx.lineTo(pts[i].x, pts[i].y);
+      ctx.strokeStyle = dark ? 'rgba(239, 235, 225, 0.48)' : 'rgba(20, 19, 16, 0.44)';
+      ctx.lineWidth = thick;
+      ctx.setLineDash([3, 2.2]);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      var end = pts[N], prev = pts[N - 1];
+      var ang = Math.atan2(end.y - prev.y, end.x - prev.x) - Math.PI / 2;
+
+      ctx.save();
+      ctx.translate(end.x, end.y);
+      ctx.rotate(ang);
+      if (hover || grab >= 0) ctx.scale(1.06, 1.06);
+
+      ctx.beginPath();
+      ctx.arc(0, 0, 3.6, 0, Math.PI * 2);
+      ctx.fillStyle = dark ? '#bcb7aa' : '#48453d';
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.moveTo(-6, 3.5);
+      ctx.bezierCurveTo(-7, 15, -9.5, 22, 0, 29);
+      ctx.bezierCurveTo(9.5, 22, 7, 15, 6, 3.5);
+      ctx.closePath();
+      ctx.fillStyle = dark ? '#ff5527' : '#f0421c';
+      ctx.shadowColor = dark ? 'rgba(0, 0, 0, 0.45)' : 'rgba(20, 19, 16, 0.22)';
+      ctx.shadowBlur = 5;
+      ctx.shadowOffsetY = 2;
+      ctx.fill();
+      ctx.shadowColor = 'transparent';
+      ctx.lineWidth = 1;
+      ctx.strokeStyle = dark ? 'rgba(239, 235, 225, 0.22)' : 'rgba(20, 19, 16, 0.24)';
+      ctx.stroke();
+
+      ctx.restore();
+      ctx.restore();
+
+      hit.style.transform = 'translate(' + end.x.toFixed(1) + 'px, ' + (end.y + 15).toFixed(1) + 'px)';
+    }
+
+    function local(e) {
+      var r = wrap.getBoundingClientRect();
+      return { x: e.clientX - r.left, y: e.clientY - r.top };
+    }
+
+    function stopLoop() {
+      isRunning = false;
+      if (rafId) { cancelAnimationFrame(rafId); rafId = 0; }
+    }
+
+    function loop(now) {
+      if (!isRunning) return;
+      var dt = Math.min((now - lastT) / 1000, 0.033);
+      lastT = now;
+      updateDrag();
+      step(dt);
+      draw();
+
+      if (grab < 0 && Math.abs(ext) < 0.08 && Math.abs(extV) < 0.08) {
+        var maxSpeed = 0;
+        for (var i = 1; i <= N; i++) {
+          var p = pts[i];
+          maxSpeed = Math.max(maxSpeed, Math.abs(p.x - p.px), Math.abs(p.y - p.py));
+        }
+        if (maxSpeed < 0.025) {
+          restFrames++;
+          if (restFrames > 18) { stopLoop(); return; }
+        } else {
+          restFrames = 0;
+        }
+      } else {
+        restFrames = 0;
+      }
+      rafId = requestAnimationFrame(loop);
+    }
+
+    function wakeLoop() {
+      if (reduce) { draw(); return; }
+      if (isRunning || document.hidden) return;
+      isRunning = true;
+      restFrames = 0;
+      lastT = performance.now();
+      rafId = requestAnimationFrame(loop);
+    }
+
+    function startDrag(e, idx) {
+      if (reduce) return;
+      suppressToggle = false;
+      wakeLoop();
+      grab = idx;
+      var p = local(e), g = pts[idx];
+      grabOff = { x: p.x - g.x, y: p.y - g.y };
+      ptr = ptrPrev = p;
+      target = { x: g.x, y: g.y };
+      downAt = performance.now();
+      downPos = p;
+      moved = 0;
+      wrap.classList.add('dragging');
+      window.addEventListener('pointermove', onMove, { passive: false });
+      window.addEventListener('pointerup', endDrag);
+      window.addEventListener('pointercancel', endDrag);
+    }
+
+    function onMove(e) {
+      if (grab < 0) return;
+      e.preventDefault();
+      ptrPrev = ptr; ptr = local(e);
+      moved = Math.max(moved, Math.hypot(ptr.x - downPos.x, ptr.y - downPos.y));
+    }
+
+    function endDrag() {
+      if (grab < 0) return;
+      var g = pts[grab];
+      if (ptr && ptrPrev) {
+        g.px = g.x - (ptr.x - ptrPrev.x) * 0.5;
+        g.py = g.y - (ptr.y - ptrPrev.y) * 0.5;
+      }
+      var tap = moved < 6 && performance.now() - downAt < 300;
+      grab = -1; target = null; ptr = ptrPrev = null;
+      wrap.classList.remove('dragging');
+      window.removeEventListener('pointermove', onMove);
+      window.removeEventListener('pointerup', endDrag);
+      window.removeEventListener('pointercancel', endDrag);
+      if (tap) {
+        extV = EXT_MAX * 42;
+        pts[N].px = pts[N].x + 1.5;
+      }
+      wakeLoop();
+    }
+
+    hit.addEventListener('pointerdown', function (e) {
+      e.preventDefault();
+      if (reduce) { toggleTheme(true); return; }
+      try { hit.setPointerCapture(e.pointerId); } catch (_) {}
+      startDrag(e, N);
+    });
+    hit.addEventListener('pointerenter', function () { hover = true; draw(); wakeLoop(); });
+    hit.addEventListener('pointerleave', function () { hover = false; draw(); });
+    hit.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        suppressToggle = false;
+        if (reduce) { toggleTheme(true); return; }
+        wakeLoop();
+        extV = EXT_MAX * 42;
+        pts[N].px = pts[N].x + 1.5;
+      }
+    });
+
+    layout();
+    draw();
+    hit.setAttribute('aria-checked', String(isDark()));
+    window.addEventListener('resize', function () { layout(); draw(); wakeLoop(); });
+    document.addEventListener('visibilitychange', function () { if (document.hidden) stopLoop(); else wakeLoop(); });
+    if (!reduce) {
+      pts[N].px = pts[N].x - 2.2;
+      wakeLoop();
+    }
+
+    return {
+      redraw: draw,
+      tug: function () {
+        if (reduce) { draw(); return; }
+        suppressToggle = true;
+        extV = EXT_MAX * 16;
+        pts[N].px = pts[N].x + 1.4;
+        wakeLoop();
+      }
+    };
+  })();
 
   /* ---------- top bar ---------- */
 
